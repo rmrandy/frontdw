@@ -7,7 +7,6 @@ function LogIn() {
   return (
     <div className='container'>
       <div className='Registro'>
-        {/* Contenido de la sección de registro */}
       </div>
       <div className='Login'>
         <div className='input-group'>
