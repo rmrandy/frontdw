@@ -41,14 +41,14 @@ body {
   top: 0;
   left: 0;
   height: 100%;
-  width: 200px; 
-  background-color: #22344f;
+  width: 300px; 
+  background-color: #acbdd5;
   color: #4b6b3d;
   padding: 20px;
   display: flex;
   flex-direction: column;
   justify-content: space-between; 
-  
+  border-radius: 20px;
 }
 
 .navbar ul {
@@ -65,7 +65,8 @@ body {
   cursor: pointer;
   transition: transform 0.2s;
   border-radius: 10px; 
-   
+  margin: 90px;
+  background-color: #acbdd5;
 }
 
 .navbar-item:hover {

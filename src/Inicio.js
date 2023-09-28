@@ -2,10 +2,15 @@ import React, { useState } from 'react';
 
 function Navbar() {
   const [activeItem, setActiveItem] = useState(null);
+  const [showSubMenu, setShowSubMenu] = useState(false);
 
-  // Función para manejar el clic en un elemento
+
   const handleClick = (index) => {
     setActiveItem(index);
+    
+    if (index === 0) {
+      setShowSubMenu(!showSubMenu);
+    }
   };
 
   return (
@@ -15,7 +20,7 @@ function Navbar() {
           className={`navbar-item ${activeItem === 0 ? 'active' : ''}`}
           onClick={() => handleClick(0)}
         >
-          <a href="#inicio">Inicio</a>
+          <a href="#inicio">Articulos Publicados</a>
         </li>
         <li
           className={`navbar-item ${activeItem === 1 ? 'active' : ''}`}
@@ -42,9 +47,29 @@ function Navbar() {
           <a href="#nuevo-blog">Nuevo Blog</a>
         </li>
       </ul>
+      {showSubMenu && (
+        <div className="submenu">
+          <ul>
+            <li className="navbar-item">
+              <a href="#destacados">Destacados</a>
+            </li>
+            <li className="navbar-item">
+              <a href="#categorias">Categorías</a>
+            </li>
+            <li className="navbar-item">
+              <a href="#subcategorias">Subcategorías</a>
+            </li>
+            <li className="navbar-item">
+              <a href="#header">Header</a>
+            </li>
+            <li className="navbar-item">
+              <a href="#footer">Footer</a>
+            </li>
+          </ul>
+        </div>
+      )}
     </nav>
   );
 }
 
 export default Navbar;
-
