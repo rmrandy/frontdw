@@ -11,8 +11,8 @@ import { LoginContext } from '../../context/contexto';
 import {useContext, useState} from 'react';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
-import './../LogIn/singin.css'; 
-import emailjs from '@emailjs/browser';
+import './../SignIn/signin.css'; 
+//import emailjs from '@emailjs/browser';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -34,12 +34,12 @@ export default function SignIn() {
 
 
     
-  const  handleRest = (event) =>{
+  /*const  handleRest = (event) =>{
     emailjs.send("service_anoqq7g","template_dkcgv38",{
       to_name: correo,
       reply_to: "caceres191453@unis.edu.gt",
     },"NZQzHmJIncXZui78F");
-  }
+  }*/
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -153,7 +153,7 @@ export default function SignIn() {
                 autoFocus
               />
                <Button
-              onClick={handleRest}
+              //onClick={handleRest}
               fullWidth
               variant="contained"
               sx={{ mt: 3, mb: 2 }}
