@@ -37,7 +37,7 @@ export default function SignUp() {
     }
     axios({
       method: 'post',
-      url: 'http://localhost/proyectoTiendas/signUp.php',
+      url: 'http://localhost/frontdw/signUp.php',
       data: dataEnviar
     })
     history.push("/signUp");
