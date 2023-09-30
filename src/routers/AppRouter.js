@@ -12,6 +12,7 @@ import { useContext } from "react";
 import SignIn from "../components/SignIn/SignIn";
 import Home from "../components/Home/home";
 import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
+import Plantilla from "../components/registroProductos/registroProducto"
 
 
 
@@ -32,6 +33,7 @@ export default function AppRouter(){
             <Route path = "/signIn" component={SignIn} />
             <Route path = "/registroRevista" component={RegistroRevista}/>
             <Route path = "/home" component={Home}/>
+            <Route path = "/plantilla" component={Plantilla}/>
 
             </Switch> :
 
@@ -41,6 +43,7 @@ export default function AppRouter(){
             <Route path = "/signIn" component={SignIn} />
             <Route path = "/registroRevista" component={RegistroRevista}/>
             <Route path = "/home" component={Home}/>
+            <Route path = "/plantilla" component={Plantilla}/>
 
         </Switch> :
         tipoUsuario === 3?
@@ -49,6 +52,7 @@ export default function AppRouter(){
         <Route path = "/signIn" component={SignIn} />
         <Route path = "/registroRevista" component={RegistroRevista}/>
         <Route path = "/home" component={Home}/>
+        <Route path = "/plantilla" component={Plantilla}/>
 
     </Switch> :
 
@@ -58,6 +62,7 @@ export default function AppRouter(){
       <Route path = "/signIn" component={SignIn} />
       <Route path = "/registroRevista" component={RegistroRevista}/>
       <Route path = "/home" component={Home}/>
+      <Route path = "/plantilla" component={Plantilla}/>
 
 
      </Switch>

@@ -163,7 +163,7 @@ export default function RegistroArticulos() {
 
   return (
     <TableContainer component={Paper}>
-        <Button onClick={()=>nuevoArticulo()}>Add Product</Button> 
+        <Button onClick={()=>nuevoArticulo()}>Nuevo Articulo</Button> 
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
