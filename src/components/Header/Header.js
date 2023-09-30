@@ -5,12 +5,15 @@ import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
 import { LoginContext } from '../../context/contexto';
-import {useContext, useState, useEffect} from 'react';
+import {useContext, 
+  // useState, useEffect
+} from 'react';
 
 export default function Header() {
   
   const{
-    username, setUsername, setTipoUsuario, tipoUsuario
+    // username, 
+    setUsername, setTipoUsuario, tipoUsuario
 } = useContext(LoginContext);
 
   const logout = () => {
@@ -35,7 +38,7 @@ export default function Header() {
         tipoUsuario == 2 ? 
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Tiendas
+            Articulos
           </Typography>
           <Button color="inherit" href="/">Home</Button>
           <Button color="inherit" href="/home" onClick = {logout}>Logout</Button>
@@ -45,7 +48,7 @@ export default function Header() {
         tipoUsuario == 3 ?
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Tiendas
+            Articulos
           </Typography>
           <Button color="inherit" href="/">Home</Button>
           <Button color="inherit" href="/home" onClick = {logout}>Logout</Button>
@@ -53,7 +56,7 @@ export default function Header() {
 
         <Toolbar>
           <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-            Tiendas
+            Articulos
           </Typography>
           <Button color="inherit" href="/signUp">SignUp</Button>
           <Button color="inherit" href="/signIn">SingIn</Button>

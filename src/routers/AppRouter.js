@@ -18,7 +18,8 @@ import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
 export default function AppRouter(){
     
     const{
-        username, setUsername, setTipoUsuario, tipoUsuario
+        // username, setUsername, setTipoUsuario, 
+        tipoUsuario
     } = useContext(LoginContext);
 
     

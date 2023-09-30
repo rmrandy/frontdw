@@ -1,6 +1,6 @@
 
 body {
-  background-color: #a68cb6; 
+  background-color: #e4d9c7; 
 }
 
 
@@ -79,4 +79,10 @@ body {
   
   color: #a7412a; 
   
+}
+
+
+.carousel * {
+  box-sizing: border-box;
+  width: 300px;
 }

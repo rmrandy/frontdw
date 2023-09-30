@@ -1,13 +1,11 @@
-import React, { Component } from 'react';
-import ReactDOM from 'react-dom';
+import React from 'react';
+// import ReactDOM from 'react-dom';
 import "react-responsive-carousel/lib/styles/carousel.min.css"; // requires a loader
 import { Carousel } from 'react-responsive-carousel';
-import img1 from "./assets/1.jpg";
-import img2 from "./assets/2.jpeg";
-import img3 from "./assets/3.jpg";
-import FormControl from '@mui/material/FormControl';
+import fotobb from '../Home/assets/5.jpg' 
+import fotobb2 from '../Home/assets/6.jpg'
 import { Button, Grid, TextField, Typography } from '@mui/material';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 import { Box } from '@mui/system';
 import axios from 'axios';
 import HomeBox from '../HomeBox/HomeBox';
@@ -26,7 +24,7 @@ const handleSubmit = (event) => {
   console.log(dataEnviar);
   axios({
     method: 'post',
-    url: 'http://localhost/proyectoTiendas/signUp.php',
+    url: 'http://localhost/proyectodiseño/signUp.php',
     data: dataEnviar
   })
 };
@@ -69,7 +67,7 @@ const handleSubmit = (event) => {
 export default function Home () {
 
   const [datos, setDatos] = React.useState([[]]);
-  const [tiendas, setTiendas] = React.useState([[]]);
+  const [diseño, setdiseño] = React.useState([[]]);
   const [prods, setProds] = React.useState([[]]);
   const [box1, setBox1] = React.useState([]);
   const [box2, setBox2] = React.useState([]);
@@ -78,7 +76,7 @@ export default function Home () {
   const [box5, setBox5] = React.useState([]);
   
   React.useEffect(() => {
-    axios.get("http://localhost/proyectoTiendas/homepage.php")
+    axios.get("http://localhost/proyectodiseño/homepage.php")
     .then(response=>{
       setDatos(response.data);
       console.log(datos);
@@ -87,16 +85,16 @@ export default function Home () {
       console.log(error);
     });
 
-    axios.get("http://localhost/proyectoTiendas/cincoTiendas.php")
+    axios.get("http://localhost/proyectodiseño/cincodiseño.php")
     .then(response=>{
-      setTiendas(response.data);
+      setdiseño(response.data);
       console.log(datos);
       
     }).catch(error=>{
       console.log(error);
     });
 
-    axios.get("http://localhost/proyectoTiendas/getProductosNuevos.php")
+    axios.get("http://localhost/proyectodiseño/getProductosNuevos.php")
     .then(response=>{
       setProds(response.data);
       console.log(datos);
@@ -106,7 +104,7 @@ export default function Home () {
     });
 
 
-    axios.get("http://localhost/proyectoTiendas/homeBox.php?id=1")
+    axios.get("http://localhost/proyectodiseño/homeBox.php?id=1")
     .then(response=>{
       setBox1(response.data);
       console.log(datos);
@@ -115,7 +113,7 @@ export default function Home () {
       console.log(error);
     });
 
-    axios.get("http://localhost/proyectoTiendas/homeBox.php?id=2")
+    axios.get("http://localhost/proyectodiseño/homeBox.php?id=2")
     .then(response=>{
       setBox2(response.data);
       console.log(datos);
@@ -124,7 +122,7 @@ export default function Home () {
       console.log(error);
     });
 
-    axios.get("http://localhost/proyectoTiendas/homeBox.php?id=3")
+    axios.get("http://localhost/proyectodiseño/homeBox.php?id=3")
     .then(response=>{
       setBox3(response.data);
       console.log(datos);
@@ -133,7 +131,7 @@ export default function Home () {
       console.log(error);
     });
 
-    axios.get("http://localhost/proyectoTiendas/homeBox.php?id=4")
+    axios.get("http://localhost/proyectodiseño/homeBox.php?id=4")
     .then(response=>{
       setBox4(response.data);
       console.log(datos);
@@ -142,7 +140,7 @@ export default function Home () {
       console.log(error);
     });
 
-    axios.get("http://localhost/proyectoTiendas/homeBox.php?id=5")
+    axios.get("http://localhost/proyectodiseño/homeBox.php?id=5")
     .then(response=>{
       setBox5(response.data);
       console.log(datos);
@@ -158,22 +156,52 @@ export default function Home () {
             <div style={{
                 padding: "1% 5%",
             }}>
-            <h3>Nuestros Mejores Productos</h3>
+            <h3>Mejores Articulos</h3>
             <Carousel>
-            {tiendas.map((ro) => (
+            {diseño.map((ro) => (
                 <div>
-                    <img src={ro.foto_logo} />
+                    <img src={fotobb} />
+                    <div>
+                      <p>hola, donde queda esto?</p>
+                    </div>
+                </div>
+              ))}
+                {diseño.map((ro) => (
+                <div>
+                    <img src={fotobb} />
+                    <div>
+                      <p>hola, donde queda esto?</p>
+                    </div>
+                </div>
+              ))}
+                {diseño.map((ro) => (
+                <div>
+                    <img src={fotobb} />
+                    <div>
+                      <p>hola, donde queda esto?</p>
+                    </div>
                 </div>
               ))}
             </Carousel>
 
-            <h3>Nuestros Productos Más Nuevos</h3>
+            <h3>Articulos Más Nuevos</h3>
             <Carousel>
             {prods.map((ro) => (
                 <div>
-                    <img src={ro.link} />
+                    <img src={fotobb2} />
                 </div>
               ))}
+              {prods.map((ro) => (
+                <div>
+                    <img src={fotobb2} />
+                </div>
+              ))}
+              {prods.map((ro) => (
+                <div>
+                    <img src={fotobb2} />
+                </div>
+              ))}
+              
             </Carousel>
 
 
