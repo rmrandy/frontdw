@@ -26,7 +26,7 @@ import { LoginContext } from '../../context/contexto';
 
 
 
-export default function RegistroProductos() {
+export default function RegistroArticulos() {
 
   const{
     username, setUsername, setTipoUsuario, tipoUsuario
@@ -41,15 +41,15 @@ export default function RegistroProductos() {
     const [openN, setOpenN] = React.useState(false);
     const [selected, setSelected] = useState([]);
     const [options, setOptions] = useState([]);
-    const [tienda, setTienda] = useState(null);
+    const [Articulo, setArticulo] = useState(null);
     const [row, setRows]=useState([]);
 
 
 
 
-    const nuevoProducto = () => {
-      if(localStorage.getItem('tienda')==0)  {
-        alert("Solo puede añadir un producto si es empleado de una tienda");
+    const nuevoArticulo = () => {
+      if(localStorage.getItem('Articulo')===0)  {
+        alert("Solo puede añadir un Articulo si es empleado de una Articulo");
       }else{
         setOpenN(true);
       }
@@ -85,13 +85,13 @@ export default function RegistroProductos() {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
       const datos = {
-        "nombre": data.get('producto'),
+        "nombre": data.get('Articulo'),
         "precio": data.get('precio'),
         "descripcion": data.get('descripcion'),
         "img2": data.get('img2'),
         "img3": data.get('img3'),
         "img1": data.get('img1'),
-        "idTienda": localStorage.getItem("tienda"),
+        "idArticulo": localStorage.getItem("Articulo"),
         "categorias": selected,
         "id": localStorage.getItem("usuario")
 
@@ -99,26 +99,26 @@ export default function RegistroProductos() {
       console.log(datos);
       
     
-    axios.post('http://localhost/proyectoTiendas/editProducto.php', datos).then(response => console.log(response));
+    axios.post('http://localhost/proyectodiseño/editArticulo.php', datos).then(response => console.log(response));
   };
 
-  const crearProducto = (event) => {
+  const crearArticulo = (event) => {
     event.preventDefault();
     const data = new FormData(event.currentTarget);
     const datos = {
-      "nombre": data.get('producto'),
+      "nombre": data.get('Articulo'),
       "precio": data.get('precio'),
       "descripcion": data.get('descripcion'),
       "img2": data.get('img2'),
       "img3": data.get('img3'),
       "img1": data.get('img1'),
-      "idTienda": localStorage.getItem('tienda'),
+      "idArticulo": localStorage.getItem('Articulo'),
       "categorias": selected
 
     };
     console.log(datos);
   
-  axios.post('http://localhost/proyectoTiendas/nuevoProducto.php', datos).then(response => console.log(response));
+  axios.post('http://localhost/proyectodiseño/nuevoArticulo.php', datos).then(response => console.log(response));
   };
 
   const elminarUsuarioA = () =>{
@@ -127,7 +127,7 @@ export default function RegistroProductos() {
   };
 
   React.useEffect(() => {
-    axios.get("http://localhost/proyectoTiendas/categoriasProductos.php")
+    axios.get("http://localhost/proyectodiseño/categoriasArticulo.php")
       .then(response=>{
         console.log(response.data);
         setOptions(response.data);
@@ -136,18 +136,18 @@ export default function RegistroProductos() {
         console.log(error);
       });
 
-      axios.get("http://localhost/proyectoTiendas/getTienda.php", {params: {id: localStorage.getItem('id_usuario')}})
+      axios.get("http://localhost/proyectodiseño/getArticulo.php", {params: {id: localStorage.getItem('id_usuario')}})
       .then(response=>{
         console.log(response.data);
-        setTienda(response.data);
-        //localStorage.setItem("tienda",response.data.id)
+        setArticulo(response.data);
+        //localStorage.setItem("Articulo",response.data.id)
         
         
       }).catch(error=>{
         console.log(error);
       });
 
-      axios.get("http://localhost/proyectoTiendas/getProductosAprobados.php")
+      axios.get("http://localhost/proyectodiseño/getArticulosAprobados.php")
       .then(response=>{
         console.log(response.data);
         setRows(response.data);
@@ -157,18 +157,18 @@ export default function RegistroProductos() {
       });
 
     
-      //console.log("Tienda: "+tienda.id);
+      //console.log("Articulo: "+Articulo.id);
 
     }, []);
 
   return (
     <TableContainer component={Paper}>
-        <Button onClick={()=>nuevoProducto()}>Add Product</Button> 
+        <Button onClick={()=>nuevoArticulo()}>Add Product</Button> 
       <Table sx={{ minWidth: 650 }} size="small" aria-label="a dense table">
         <TableHead>
           <TableRow>
             <TableCell>ID</TableCell>
-            <TableCell align="right">Producto</TableCell>
+            <TableCell align="right">Articulo</TableCell>
             <TableCell align="right">Precio</TableCell>
             <TableCell align="right">Descripcion</TableCell>
             <TableCell align="right">Categorias</TableCell>
@@ -208,8 +208,8 @@ export default function RegistroProductos() {
                 
                         <DialogContent>
                             <h4>ID: {localStorage.getItem("usuario")}</h4>
-                            <h4>Producto: </h4>
-                            <TextField id="outlined-basic" variant="outlined" name="producto"/> <br/>
+                            <h4>Articulo: </h4>
+                            <TextField id="outlined-basic" variant="outlined" name="Articulo"/> <br/>
                             <h4>Precio: </h4>
                             <TextField id="outlined-basic" variant="outlined" name="precio"/> <br/>
                             <h4>Descripcion: </h4>
@@ -264,15 +264,15 @@ export default function RegistroProductos() {
             aria-labelledby="alert-dialog-title"
             aria-describedby="alert-dialog-description"
         >
-        <Box component="form" noValidate onSubmit={crearProducto} sx={{ mt: 3 }}>
+        <Box component="form" noValidate onSubmit={crearArticulo} sx={{ mt: 3 }}>
         <DialogTitle id="alert-dialog-title">
-          {"Nuevo Producto"}
+          {"Nuevo Articulo"}
         </DialogTitle>
         
         <DialogContent>
             <h4>ID: {localStorage.getItem("usuario")}</h4>
-            <h4>Producto: </h4>
-            <TextField id="outlined-basic" variant="outlined" name="producto"/> <br/>
+            <h4>Articulo: </h4>
+            <TextField id="outlined-basic" variant="outlined" name="Articulo"/> <br/>
             <h4>Precio: </h4>
             <TextField id="outlined-basic" variant="outlined" name="precio"/> <br/>
             <h4>Descripcion: </h4>
