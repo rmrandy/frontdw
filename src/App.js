@@ -2,6 +2,7 @@ import React from 'react';
 import AppRouter from './routers/AppRouter';
 import { LoginContext } from './context/contexto';
 import {useContext, useState, useEffect} from 'react';
+import Header from './components/Header/Header';
 import './App.css';
 
 
@@ -58,6 +59,7 @@ function App() {
       <div className="App">
 
       <LoginContext.Provider value={{username, setUsername, setTipoUsuario, tipoUsuario}}>   
+      <Header/>
       <AppRouter />
       </LoginContext.Provider> 
       </div>

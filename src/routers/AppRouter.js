@@ -10,6 +10,9 @@ import { LoginContext } from "../context/contexto"; //para usar variables de usu
 import SignUp from "../components/SignUp/SignUp";
 import { useContext } from "react";
 import SignIn from "../components/SignIn/SignIn";
+import Home from "../components/Home/home";
+import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
+
 
 
 export default function AppRouter(){
@@ -26,6 +29,8 @@ export default function AppRouter(){
             <Switch>
             <Route path = "/signUp" component={SignUp}/>
             <Route path = "/signIn" component={SignIn} />
+            <Route path = "/registroRevista" component={RegistroRevista}/>
+            <Route path = "/home" component={Home}/>
 
             </Switch> :
 
@@ -33,18 +38,27 @@ export default function AppRouter(){
             <Switch>
             <Route path = "/signUp" component={SignUp}/>
             <Route path = "/signIn" component={SignIn} />
+            <Route path = "/registroRevista" component={RegistroRevista}/>
+            <Route path = "/home" component={Home}/>
 
         </Switch> :
         tipoUsuario === 3?
         <Switch>
         <Route path = "/signUp" component={SignUp}/>
         <Route path = "/signIn" component={SignIn} />
+        <Route path = "/registroRevista" component={RegistroRevista}/>
+        <Route path = "/home" component={Home}/>
+
     </Switch> :
 
 
      <Switch>
       <Route path = "/signUp" component={SignUp}/>
       <Route path = "/signIn" component={SignIn} />
+      <Route path = "/registroRevista" component={RegistroRevista}/>
+      <Route path = "/home" component={Home}/>
+
+
      </Switch>
             }
         </Router>

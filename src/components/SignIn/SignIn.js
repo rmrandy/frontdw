@@ -70,7 +70,7 @@ export default function SignIn() {
   axios.get('http://localhost/frontdw/getfrontdw.php?correo='+ data.get('email'))
   .then(response=>{
    
-    localStorage.setItem('tienda', response.data.tienda);
+    localStorage.setItem('revista', response.data.reivsta);
     
   }).catch(error=>{
     console.log(error);
