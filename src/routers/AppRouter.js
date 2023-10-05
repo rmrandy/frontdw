@@ -13,6 +13,7 @@ import SignIn from "../components/SignIn/SignIn";
 import Home from "../components/Home/home";
 import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
 import Plantilla from "../components/registroProductos/registroProducto"
+import Articulos from "../components/Articulos/Articulos"
 
 
 
@@ -34,6 +35,7 @@ export default function AppRouter(){
             <Route path = "/registroRevista" component={RegistroRevista}/>
             <Route path = "/home" component={Home}/>
             <Route path = "/plantilla" component={Plantilla}/>
+            <Route path = "/articuloBB" component={Articulos}/>
 
             </Switch> :
 
@@ -44,6 +46,7 @@ export default function AppRouter(){
             <Route path = "/registroRevista" component={RegistroRevista}/>
             <Route path = "/home" component={Home}/>
             <Route path = "/plantilla" component={Plantilla}/>
+            <Route path = "/articuloBB" component={Articulos}/>
 
         </Switch> :
         tipoUsuario === 3?
@@ -53,6 +56,8 @@ export default function AppRouter(){
         <Route path = "/registroRevista" component={RegistroRevista}/>
         <Route path = "/home" component={Home}/>
         <Route path = "/plantilla" component={Plantilla}/>
+        <Route path = "/articuloBB" component={Articulos}/>
+        
 
     </Switch> :
 
@@ -63,6 +68,7 @@ export default function AppRouter(){
       <Route path = "/registroRevista" component={RegistroRevista}/>
       <Route path = "/home" component={Home}/>
       <Route path = "/plantilla" component={Plantilla}/>
+      <Route path = "/articuloBB" component={Articulos}/>
 
 
      </Switch>

@@ -3,6 +3,8 @@ import AppRouter from './routers/AppRouter';
 import { LoginContext } from './context/contexto';
 import {useContext, useState, useEffect} from 'react';
 import Header from './components/Header/Header';
+import SignIn from './components/SignIn/SignIn';
+import { BrowserRouter as Router, Route, Switch, Redirect } from 'react-router-dom';
 import './App.css';
 
 
@@ -54,14 +56,11 @@ function App() {
 
   return (
 
-
-
-      <div className="App">
-
-      <LoginContext.Provider value={{username, setUsername, setTipoUsuario, tipoUsuario}}>   
-      <Header/>
-      <AppRouter />
-      </LoginContext.Provider> 
+    <div className="App">
+        <LoginContext.Provider value={{ username, setUsername, setTipoUsuario, tipoUsuario }}>
+          <Header />
+          <AppRouter />
+        </LoginContext.Provider>
       </div>
 
 
