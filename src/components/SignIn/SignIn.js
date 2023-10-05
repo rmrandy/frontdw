@@ -8,11 +8,9 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { LoginContext } from '../../context/contexto';
-import {useContext, useState} from 'react';
-import axios from 'axios';
+import { useContext, useState } from 'react';
 import { useHistory } from 'react-router-dom';
-import './../SignIn/signin.css'; 
-//import emailjs from '@emailjs/browser';
+import './../SignIn/signin.css';
 import Typography from '@mui/material/Typography';
 import Container from '@mui/material/Container';
 import { createTheme, ThemeProvider } from '@mui/material/styles';
@@ -20,65 +18,43 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function SignIn() {
+  const {
+    setUsername,
+    setTipoUsuario,
+  } = useContext(LoginContext);
 
-    const{
-        // username, 
-        setUsername, setTipoUsuario, 
-        // tipoUsuario
-    } = useContext(LoginContext);
-
-    const history = useHistory();
-
-    const [open, setOpen]=useState(false);
-    const [correo, setCorreo]=useState('');
-
-
-    
-  /*const  handleRest = (event) =>{
-    emailjs.send("service_anoqq7g","template_dkcgv38",{
-      to_name: correo,
-      reply_to: "caceres191453@unis.edu.gt",
-    },"NZQzHmJIncXZui78F");
-  }*/
+  const history = useHistory();
 
   const handleSubmit = (event) => {
     event.preventDefault();
+  
+    // Usuario registrado como "Randy" y contraseña "123"
+    const username = 'Randy';
+    const password = '123';
+  
     const data = new FormData(event.currentTarget);
-    console.log({
-      email: data.get('email'),
-      password: data.get('password'),
-    });
-    
-    let dataEnviar = new FormData();
-    dataEnviar.append('correo', data.get('email'));
-    dataEnviar.append('contrasena', data.get('password'));
-
-    axios.post('http://localhost/frontdw/signIn.php', dataEnviar)
-    .then(function (response) {
-      console.log(response);
-      console.log(response.data.id_tipousuario);
-      setUsername (data.get('email'));
-      setTipoUsuario(response.data.id_tipousuario);
-      localStorage.setItem('id_usuario',response.data.id);
-      history.push("/home");
-  })
-  .catch(function (response) {
-
-  });
-
-
-  axios.get('http://localhost/frontdw/getfrontdw.php?correo='+ data.get('email'))
-  .then(response=>{
-   
-    localStorage.setItem('revista', response.data.reivsta);
-    
-  }).catch(error=>{
-    console.log(error);
-  });
+    const email = data.get('email');
+    const userPassword = data.get('password');
+  
+    // Comprobar si el usuario y la contraseña coinciden
+    if (email === username && userPassword === password) {
+      // Verificar que el usuario sea Randy
+      if (username === 'Randy') {
+        // Redirigir a la ruta `/home`
+        history.push('/home');
+      } else {
+        // El usuario no es Randy
+        alert('El usuario no está autorizado para acceder a esta ruta.');
+      }
+    } else {
+      // Manejar la lógica de autenticación fallida
+      alert('Autenticación fallida. Verifique su nombre de usuario y contraseña.');
+    }
+  };
   
 
-  };
-
+  
+  
   return (
     <ThemeProvider theme={theme}>
       <Container component="main" maxWidth="xs">
@@ -129,7 +105,7 @@ export default function SignIn() {
             </Button>
             <Grid container>
               <Grid item xs>
-                <Link href='#' onClick={e=>setOpen(true)}>
+                <Link href='#'>
                   Forgot password?
                 </Link>
               </Grid>
@@ -138,32 +114,10 @@ export default function SignIn() {
                   {"Don't have an account? Sign Up"}
                 </Link>
               </Grid>
-              
             </Grid>
-            <div  id={open?"yes":"not"}>
-                <TextField
-                onChange={e=>setCorreo(e.target.value)}
-                margin="normal"
-                required
-                fullWidth
-                id="new-email"
-                label="Email Address"
-                name="new-email"
-                autoComplete="email"
-                autoFocus
-              />
-               <Button
-              //onClick={handleRest}
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Restablecer Contraseña
-            </Button>
-            </div>
           </Box>
         </Box>
       </Container>
     </ThemeProvider>
-  );
+  );
 }

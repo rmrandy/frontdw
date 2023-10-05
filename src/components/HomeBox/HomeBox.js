@@ -12,21 +12,13 @@ export default function HomeBox(props) {
         <div style={{
             "margin-left": "1%"
         }}>
-        <Card sx={{ maxWidth: 345 }}>
+        <Card sx={{ maxWidth: 345}}>
         <CardMedia
           component="img"
           height="140"
           image={foto}
           alt="the moon is preety, isn´t it? "
         />
-        <CardContent>
-          <Typography gutterBottom variant="h5" component="div">
-            {props.title}
-          </Typography>
-          <Typography variant="body2" color="text.secondary">
-            {props.body}
-          </Typography>
-        </CardContent>
       </Card>
         </div>
     );
