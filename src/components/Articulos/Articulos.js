@@ -2,7 +2,6 @@ import React from "react";
 import fotobb from "../Home/assets/6.jpg";
 import otroBB from "../Home/assets/BB3.jpg"
 import "../Articulos/Articulo.css";
-import foto from '../Home/assets/4.jpg'
 
 const Articulo = () => {
   return (
