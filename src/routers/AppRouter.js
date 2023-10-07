@@ -14,6 +14,7 @@ import Home from "../components/Home/home";
 import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
 import Plantilla from "../components/registroProductos/registroProducto"
 import Articulos from "../components/Articulos/Articulos"
+import Categorías from "../components/Categorías /categoríasgr"
 
 
 
@@ -36,6 +37,7 @@ export default function AppRouter(){
             <Route path = "/home" component={Home}/>
             <Route path = "/plantilla" component={Plantilla}/>
             <Route path = "/articuloBB" component={Articulos}/>
+            <Route path = "/categorías_gratis" component={Categorías}/>
 
             </Switch> :
 
@@ -47,6 +49,7 @@ export default function AppRouter(){
             <Route path = "/home" component={Home}/>
             <Route path = "/plantilla" component={Plantilla}/>
             <Route path = "/articuloBB" component={Articulos}/>
+            <Route path = "/categorías_gratis" component={Categorías}/>
 
         </Switch> :
         tipoUsuario === 3?
@@ -57,6 +60,7 @@ export default function AppRouter(){
         <Route path = "/home" component={Home}/>
         <Route path = "/plantilla" component={Plantilla}/>
         <Route path = "/articuloBB" component={Articulos}/>
+        <Route path = "/categorías_gratis" component={Categorías}/>
         
 
     </Switch> :
@@ -69,6 +73,7 @@ export default function AppRouter(){
       <Route path = "/home" component={Home}/>
       <Route path = "/plantilla" component={Plantilla}/>
       <Route path = "/articuloBB" component={Articulos}/>
+      <Route path = "/categorías_gratis" component={Categorías}/>
 
 
      </Switch>
