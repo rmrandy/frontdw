@@ -43,7 +43,7 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{backgroundColor: "rgb(163, 5, 5)" }}>
+      <AppBar position="static" sx={{backgroundColor: "#26465F" }}>
         {tipoUsuario === 1 ? (
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>

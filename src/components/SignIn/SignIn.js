@@ -28,7 +28,7 @@ export default function SignIn() {
   const handleSubmit = (event) => {
     event.preventDefault();
   
-    // Usuario registrado como "Randy" y contraseña "123"
+    
     const username = 'Randy';
     const password = '123';
   
@@ -36,28 +36,24 @@ export default function SignIn() {
     const email = data.get('email');
     const userPassword = data.get('password');
   
-    // Comprobar si el usuario y la contraseña coinciden
+    
     if (email === username && userPassword === password) {
-      // Verificar que el usuario sea Randy
+      
       if (username === 'Randy') {
-        // Redirigir a la ruta `/home`
+      
         history.push('/home');
       } else {
-        // El usuario no es Randy
-        alert('El usuario no está autorizado para acceder a esta ruta.');
+        
       }
     } else {
-      // Manejar la lógica de autenticación fallida
+      
       alert('Autenticación fallida. Verifique su nombre de usuario y contraseña.');
     }
   };
-  
 
-  
-  
   return (
     <ThemeProvider theme={theme}>
-      <Container component="main" maxWidth="xs">
+      <Container component="main" maxWidth="xs" style={{ backgroundColor: 'black', height: '600px' , marginBottom: "30px" , borderRadius: "15px" }}>
         <CssBaseline />
         <Box
           sx={{
@@ -65,6 +61,7 @@ export default function SignIn() {
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            color: 'white', 
           }}
         >
           <Typography component="h1" variant="h5">
