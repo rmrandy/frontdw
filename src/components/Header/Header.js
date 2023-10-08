@@ -1,13 +1,14 @@
-import * as React from 'react';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
-import Button from '@mui/material/Button';
-import { LoginContext } from '../../context/contexto';
-import { useContext, useState } from 'react'; // Importa useState
-import Menu from '@mui/material/Menu';
-import MenuItem from '@mui/material/MenuItem';
+import * as React from "react";
+import AppBar from "@mui/material/AppBar";
+import Box from "@mui/material/Box";
+import Toolbar from "@mui/material/Toolbar";
+import Typography from "@mui/material/Typography";
+import Button from "@mui/material/Button";
+import { LoginContext } from "../../context/contexto";
+import { useContext, useState } from "react"; // Importa useState
+import Menu from "@mui/material/Menu";
+import MenuItem from "@mui/material/MenuItem";
+import { Link } from "react-router-dom"; // Agrega la importación de Link
 
 export default function Header() {
   const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
@@ -29,21 +30,17 @@ export default function Header() {
     setCategoryMenuAnchorEl(null);
   };
 
-  const {
-    setUsername,
-    setTipoUsuario,
-    tipoUsuario
-  } = useContext(LoginContext);
+  const { setUsername, setTipoUsuario, tipoUsuario } = useContext(LoginContext);
 
   const logout = () => {
-    setUsername('');
-    setTipoUsuario('4');
-    localStorage.setItem('id_usuario', '');
+    setUsername("");
+    setTipoUsuario("4");
+    localStorage.setItem("id_usuario", "");
   };
 
   return (
-    <Box sx={{ flexGrow: 1}}>
-      <AppBar position="static" sx={{backgroundColor: "#26465F" }}>
+    <Box sx={{ flexGrow: 1 }}>
+      <AppBar position="static" sx={{ backgroundColor: "#26465F" }}>
         {tipoUsuario === 1 ? (
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -90,18 +87,27 @@ export default function Header() {
               open={Boolean(profileMenuAnchorEl)}
               onClose={handleCloseProfileMenu}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
             >
               <MenuItem onClick={handleCloseProfileMenu}>Premium</MenuItem>
               <MenuItem onClick={handleCloseProfileMenu}>Gratuito</MenuItem>
             </Menu>
-            <Button color="inherit" onClick={handleCategoryClick}>
+            <Button
+              color="inherit"
+              onClick={handleCategoryClick}
+              sx={{
+                "&:hover": {
+                  color: "inherit",
+                  backgroundColor: "transparent",
+                },
+              }}
+            >
               Categorías
             </Button>
             <Menu
@@ -109,16 +115,18 @@ export default function Header() {
               open={Boolean(categoryMenuAnchorEl)}
               onClose={handleCloseCategoryMenu}
               anchorOrigin={{
-                vertical: 'bottom',
-                horizontal: 'left',
+                vertical: "bottom",
+                horizontal: "left",
               }}
               transformOrigin={{
-                vertical: 'top',
-                horizontal: 'left',
+                vertical: "top",
+                horizontal: "left",
               }}
             >
-              <MenuItem onClick={handleCloseCategoryMenu}>Gratis</MenuItem>
-              <MenuItem onClick={handleCloseCategoryMenu}>Premium</MenuItem>
+              <MenuItem>
+                <Link to="/categorías_gratis">Categorías Gratis</Link>
+              </MenuItem>
+              <MenuItem onClick={handleCloseCategoryMenu}>Categorías Premium</MenuItem>
             </Menu>
             <Button color="inherit" href="/home">
               Home
@@ -129,3 +137,4 @@ export default function Header() {
     </Box>
   );
 }
+

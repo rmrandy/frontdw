@@ -1,83 +1,75 @@
-import React from "react";
+import React, { useContext } from "react";
 import {
-    BrowserRouter as Router,
-    Switch,
-    Route,
-    // Redirect,
-    // useParams
-} from "react-router-dom"
-import { LoginContext } from "../context/contexto"; //para usar variables de usuario y tipo en la app
+  BrowserRouter as Router,
+  Switch,
+  Route,
+} from "react-router-dom";
+import { LoginContext } from "../context/contexto";
 import SignUp from "../components/SignUp/SignUp";
-import { useContext } from "react";
 import SignIn from "../components/SignIn/SignIn";
 import Home from "../components/Home/home";
 import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
-import Plantilla from "../components/registroProductos/registroProducto"
-import Articulos from "../components/Articulos/Articulos"
-import Categorías from "../components/Categorías /categoríasgr"
+import Plantilla from "../components/registroProductos/registroProducto";
+import Articulos from "../components/Articulos/Articulos";
+// import Categorias from "../components/Categorías/Categorias";
+// import Categorias from "../components/Categorias/Categorias";
+import Prueba from "../components/Prueba/prueba"
 
 
 
-export default function AppRouter(){
-    
-    const{
-        // username, setUsername, setTipoUsuario, 
-        tipoUsuario
-    } = useContext(LoginContext);
 
-    
-    
-    return(
-        <Router>
-            {tipoUsuario === 1 ?
-            <Switch>
-            <Route path = "/signUp" component={SignUp}/>
-            <Route path = "/signIn" component={SignIn} />
-            <Route path = "/registroRevista" component={RegistroRevista}/>
-            <Route path = "/home" component={Home}/>
-            <Route path = "/plantilla" component={Plantilla}/>
-            <Route path = "/articuloBB" component={Articulos}/>
-            <Route path = "/categorías_gratis" component={Categorías}/>
 
-            </Switch> :
+function AppRouter() {
+  const {
+    tipoUsuario,
+  } = useContext(LoginContext);
 
-            tipoUsuario === 2?
-            <Switch>
-            <Route path = "/signUp" component={SignUp}/>
-            <Route path = "/signIn" component={SignIn} />
-            <Route path = "/registroRevista" component={RegistroRevista}/>
-            <Route path = "/home" component={Home}/>
-            <Route path = "/plantilla" component={Plantilla}/>
-            <Route path = "/articuloBB" component={Articulos}/>
-            <Route path = "/categorías_gratis" component={Categorías}/>
-
-        </Switch> :
-        tipoUsuario === 3?
+  return (
+    <Router>
+      {tipoUsuario === 1 ? (
         <Switch>
-        <Route path = "/signUp" component={SignUp}/>
-        <Route path = "/signIn" component={SignIn} />
-        <Route path = "/registroRevista" component={RegistroRevista}/>
-        <Route path = "/home" component={Home}/>
-        <Route path = "/plantilla" component={Plantilla}/>
-        <Route path = "/articuloBB" component={Articulos}/>
-        <Route path = "/categorías_gratis" component={Categorías}/>
-        
-
-    </Switch> :
-
-
-     <Switch>
-      <Route path = "/signUp" component={SignUp}/>
-      <Route path = "/signIn" component={SignIn} />
-      <Route path = "/registroRevista" component={RegistroRevista}/>
-      <Route path = "/home" component={Home}/>
-      <Route path = "/plantilla" component={Plantilla}/>
-      <Route path = "/articuloBB" component={Articulos}/>
-      <Route path = "/categorías_gratis" component={Categorías}/>
-
-
-     </Switch>
-            }
-        </Router>
-    );
+          <Route path="/signUp" component={SignUp} />
+          <Route path="/signIn" component={SignIn} />
+          <Route path="/registroRevista" component={RegistroRevista} />
+          <Route path="/home" component={Home} />
+          <Route path="/plantilla" component={Plantilla} />
+          <Route path="/articuloBB" component={Articulos} />
+          {/* <Route path="/categoria" component={Categorias} /> */}
+          <Route path="/categorías_gratis" component={Prueba} /> 
+        </Switch>
+      ) : tipoUsuario === 2 ? (
+        <Switch>
+          <Route path="/signUp" component={SignUp} />
+          <Route path="/signIn" component={SignIn} />
+          <Route path="/registroRevista" component={RegistroRevista} />
+          <Route path="/home" component={Home} />
+          <Route path="/plantilla" component={Plantilla} />
+          <Route path="/articuloBB" component={Articulos} />
+          <Route path="/categorías_gratis" component={Prueba} /> 
+        </Switch>
+      ) : tipoUsuario === 3 ? (
+        <Switch>
+          <Route path="/signUp" component={SignUp} />
+          <Route path="/signIn" component={SignIn} />
+          <Route path="/registroRevista" component={RegistroRevista} />
+          <Route path="/home" component={Home} />
+          <Route path="/plantilla" component={Plantilla} />
+          <Route path="/articuloBB" component={Articulos} />
+          <Route path="/categorías_gratis" component={Prueba} /> 
+        </Switch>
+      ) : (
+        <Switch>
+          <Route path="/signUp" component={SignUp} />
+          <Route path="/signIn" component={SignIn} />
+          <Route path="/registroRevista" component={RegistroRevista} />
+          <Route path="/home" component={Home} />
+          <Route path="/plantilla" component={Plantilla} />
+          <Route path="/articuloBB" component={Articulos} />
+          <Route path="/categorías_gratis" component={Prueba} /> 
+        </Switch>
+      )}
+    </Router>
+  );
 }
+
+export default AppRouter;
