@@ -6,20 +6,22 @@ import "./prueba.css";
 
 const Categorias = () => {
   return (
-    <div className="categorias-container">
+    <div className="categorias-container" style={{ width: "100%", height: "700px%" }}>
       <div className="category">
         <div className="category-content">
           <div className="category-image">
-            <img
+          <img
               src={foto2}
               alt="Imagen"
               style={{
-                borderRadius: "15px",
+                borderRadius: "20px",
                 width: "350px",
                 height: "500px",
-                objectFit: "cover", 
-                display: "block", 
-                margin: "0 auto", 
+                objectFit: "cover",
+                display: "block",
+                margin: "0 auto",
+                marginTop: "30px",
+                marginBottom: "60px"
               }}
             />
           </div>
@@ -43,6 +45,8 @@ const Categorias = () => {
                 objectFit: "cover",
                 display: "block",
                 margin: "0 auto",
+                marginTop: "30px",
+                marginBottom: "60px"
               }}
             />
           </div>
@@ -82,10 +86,12 @@ const Categorias = () => {
                 objectFit: "cover",
                 display: "block",
                 margin: "0 auto",
+                marginTop: "30px",
+                marginBottom: "60px"
+                
               }}
             />
           </div>
-
           <div className="category-text">
             <h1>Tu título aquí</h1>
             <p> Contenido de la categoría "Reseñas"</p>

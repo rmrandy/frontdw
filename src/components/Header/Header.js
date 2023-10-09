@@ -98,36 +98,9 @@ export default function Header() {
               <MenuItem onClick={handleCloseProfileMenu}>Premium</MenuItem>
               <MenuItem onClick={handleCloseProfileMenu}>Gratuito</MenuItem>
             </Menu>
-            <Button
-              color="inherit"
-              onClick={handleCategoryClick}
-              sx={{
-                "&:hover": {
-                  color: "inherit",
-                  backgroundColor: "transparent",
-                },
-              }}
-            >
-              Categorías
+            <Button color="inherit" href="/categorías"> {/* Cambia la ruta a "/categorías" */}
+              Plantillas
             </Button>
-            <Menu
-              anchorEl={categoryMenuAnchorEl}
-              open={Boolean(categoryMenuAnchorEl)}
-              onClose={handleCloseCategoryMenu}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-            >
-              <MenuItem>
-                <Link to="/categorías_gratis">Categorías Gratis</Link>
-              </MenuItem>
-              <MenuItem onClick={handleCloseCategoryMenu}>Categorías Premium</MenuItem>
-            </Menu>
             <Button color="inherit" href="/home">
               Home
             </Button>

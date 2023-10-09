@@ -125,7 +125,7 @@ export default function Home() {
         padding: "1% 5%",
       }}
     >
-      <h1 style={{ color: "white" }}>Mejores Articulos</h1>
+      <h1 style={{ color: "white"  , marginBottom: "30px"}}>Mejores Articulos</h1>
       <Carousel>
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
@@ -288,7 +288,7 @@ export default function Home() {
           </div>
         ))}
       </Carousel>
-      <h1 style={{ color: "white" }}>Articulos Más Nuevos</h1>
+      <h1 style={{ color: "white" , marginTop: "50px" , marginBottom: "50px" }}>Articulos Más Nuevos</h1>
       <Carousel>
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
@@ -313,7 +313,7 @@ export default function Home() {
                   to="/articuloBB"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <h1 style={{ marginRight: "85px", color: "white" }}>
+                  <h1 style={{ marginRight: "85px", color: "white" , marginTop:"150px"}}>
                     ¿Cúal es la mejor canción de bad Bunny?
                   </h1>
                 </Link>
@@ -324,7 +324,7 @@ export default function Home() {
                     paddingLeft: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" }}>
+                  <p style={{ marginRight: "85px", color: "white" ,  marginTop:"100px" }}>
                     Bad Bunny, nacido el 10 de marzo de 1994 en Vega Baja,
                     Puerto Rico, es un artista que ha logrado trascender
                     fronteras geográficas y culturales. Su música, que a menudo
@@ -344,7 +344,7 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" }} />
+            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" ,}} />
             <div
               style={{
                 display: "flex",
@@ -365,7 +365,7 @@ export default function Home() {
                   to="/articuloBB"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <h1 style={{ marginRight: "85px", color: "white" }}>
+                  <h1 style={{ marginRight: "85px", color: "white" ,  marginTop:"150px"}}>
                     ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
                   </h1>
                 </Link>
@@ -376,7 +376,7 @@ export default function Home() {
                     paddingLeft: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" }}>
+                  <p style={{ marginRight: "85px", color: "white" , marginTop:"100px"}}>
                     A lo largo de su carrera, Bad Bunny ha lanzado una serie de
                     álbumes exitosos, incluyendo "X 100pre," "YHLQMDLG" y "El
                     Último Tour Del Mundo." Sus colaboraciones con otros
@@ -417,7 +417,7 @@ export default function Home() {
                   to="/articuloBB"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <h1 style={{ marginRight: "85px", color: "white" }}>
+                  <h1 style={{ marginRight: "85px", color: "white"  ,  marginTop:"150px" }}>
                     ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
                   </h1>
                 </Link>
@@ -428,7 +428,7 @@ export default function Home() {
                     paddingLeft: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" }}>
+                  <p style={{ marginRight: "85px", color: "white" , marginTop:"100px"}}>
                     Bad Bunny también ha incursionado en el mundo de la
                     actuación, haciendo apariciones en películas y programas de
                     televisión. Su carisma y presencia en pantalla lo han

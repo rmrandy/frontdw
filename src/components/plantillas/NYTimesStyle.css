@@ -1,0 +1,63 @@
+/* Reset de estilos para eliminar márgenes y relleno predeterminados del navegador */
+body, h1, h2, h3, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  /* Estilos para el contenedor principal */
+  .nytimes-template {
+    min-height: 100vh; /* Hace que el contenedor ocupe todo el alto de la ventana */
+    display: flex;
+    flex-direction: column; /* Apila los elementos verticalmente */
+    justify-content: flex-start; /* Alinea el contenido al principio verticalmente */
+    align-items: center; /* Centra horizontalmente el contenido */
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+    background-color: #f5f5f5;
+  }
+  
+  /* Estilos para el encabezado */
+  .nytimes-header {
+    text-align: center;
+    margin-bottom: 20px;
+    margin-top: 20px; /* Espacio superior añadido para centrar el título */
+  }
+  
+  .nytimes-header h1 {
+    font-size: 36px;
+    font-weight: bold;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .nytimes-header p {
+    font-size: 14px;
+    color: #777;
+  }
+  
+  /* Estilos para la imagen */
+  .nytimes-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 10px;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el contenido */
+  .nytimes-content p {
+    font-size: 16px;
+    line-height: 1.5;
+    color: #333;
+    margin-bottom: 20px;
+  }
+  
+  /* Estilos para el pie de página */
+  .nytimes-footer {
+    text-align: center;
+    font-size: 12px;
+    color: #777;
+    margin-top: 20px;
+  }
+  

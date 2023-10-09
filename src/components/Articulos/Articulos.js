@@ -65,6 +65,11 @@ const Articulo = () => {
             ipsum non urna sollicitudin tincidunt.
           </p>
           <br />
+          <br/>
+          <br/>
+          <br/>
+          <br />
+          <br />
           <br />
           <h2>Recomendaciones</h2>
           <p>
@@ -79,6 +84,14 @@ const Articulo = () => {
             et ante eget metus tristique posuere. Suspendisse potenti. Cras at
             ipsum non urna sollicitudin tincidunt.
           </p>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
+          <br/>
           <br/>
           <br/>
           <br/>

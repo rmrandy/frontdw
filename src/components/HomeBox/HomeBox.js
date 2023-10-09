@@ -15,7 +15,7 @@ export default function HomeBox(props) {
         <Card sx={{ maxWidth: 345}}>
         <CardMedia
           component="img"
-          height="140"
+          height="180"
           image={foto}
           alt="the moon is preety, isn´t it? "
         />

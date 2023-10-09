@@ -14,6 +14,7 @@ import Articulos from "../components/Articulos/Articulos";
 // import Categorias from "../components/Categorías/Categorias";
 // import Categorias from "../components/Categorias/Categorias";
 import Prueba from "../components/Prueba/prueba"
+import Plantillas from "../components/plantillas/plantillas"
 
 
 
@@ -36,6 +37,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           {/* <Route path="/categoria" component={Categorias} /> */}
           <Route path="/categorías_gratis" component={Prueba} /> 
+          <Route path="/plantilla_noticia" component={Plantillas} /> 
         </Switch>
       ) : tipoUsuario === 2 ? (
         <Switch>
@@ -46,6 +48,7 @@ function AppRouter() {
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías_gratis" component={Prueba} /> 
+          <Route path="/plantilla_noticia" component={Plantillas} /> 
         </Switch>
       ) : tipoUsuario === 3 ? (
         <Switch>
@@ -55,7 +58,8 @@ function AppRouter() {
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
-          <Route path="/categorías_gratis" component={Prueba} /> 
+          <Route path="/categorías" component={Prueba} /> 
+          <Route path="/plantilla_noticia" component={Plantillas} /> 
         </Switch>
       ) : (
         <Switch>
@@ -65,7 +69,8 @@ function AppRouter() {
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
-          <Route path="/categorías_gratis" component={Prueba} /> 
+          <Route path="/categorías" component={Prueba} /> 
+          <Route path="/plantilla_noticia" component={Plantillas} /> 
         </Switch>
       )}
     </Router>
