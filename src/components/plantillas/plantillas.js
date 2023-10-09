@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import "../Articulos/Articulo.css";
 
 const Articulo = () => {
   const [selectedImage, setSelectedImage] = useState(null);
@@ -57,10 +56,18 @@ const Articulo = () => {
               <img
                 src={selectedImage}
                 alt="Imagen seleccionada"
-                style={{ maxWidth: "100%", maxHeight: "100%" , borderRadius: "15px" , marginTop: "15px", marginBottom:"15px"}}
+                style={{
+                  maxWidth: "100%",
+                  maxHeight: "100%",
+                  borderRadius: "15px",
+                  marginTop: "15px",
+                  marginBottom: "15px",
+                }}
               />
             ) : (
-              <p>Arrastra y suelta una imagen o haz clic para seleccionar una.</p>
+              <p>
+                Arrastra y suelta una imagen.
+              </p>
             )}
             <input
               type="file"
@@ -71,10 +78,10 @@ const Articulo = () => {
           </div>
           <div
             style={{
-              width: "200px",
+              width: "300px",
               float: "left",
               marginRight: "20px",
-              marginLeft: "50px",
+              marginLeft: "70px",
               marginBottom: "20px",
               borderRadius: "15px",
               border: "2px solid black",
@@ -86,7 +93,7 @@ const Articulo = () => {
             }}
           >
             <h1 style={{ marginLeft: "30px" }}>Título del artículo</h1>
-            
+
             <div
               style={{
                 border: "2px solid black",
@@ -94,11 +101,9 @@ const Articulo = () => {
                 marginBottom: "20px",
                 height: "250px",
                 width: "80%",
-                borderRadius:"15px"
+                borderRadius: "15px",
               }}
-            >
-              {/* Contenido del nuevo div */}
-            </div>
+            ></div>
             <div
               style={{
                 border: "2px solid black",
@@ -106,24 +111,87 @@ const Articulo = () => {
                 marginBottom: "20px",
                 height: "250px",
                 width: "80%",
-                borderRadius:"15px"
+                borderRadius: "15px",
               }}
-            >
-              {/* Contenido del nuevo div */}
-            </div>
+            ></div>
           </div>
         </div>
         <div
           style={{
+            width: "300px",
+            float: "right",
+            marginLeft: "10px",
+            marginBottom: "20px",
+            borderRadius: "15px",
             border: "2px solid black",
             backgroundColor: "#f0f0f0",
-            height: "300px",
-            width: "300px",
-            marginLeft: "10px",
-            borderRadius: "15px",
+            height: "600px",
+            display: "flex",
+            alignItems: "center",
+            justifyContent: "center",
+            position: "relative",
           }}
         >
-          {/* Placeholder de nombre del autor */}
+          {selectedImage ? (
+            <img
+              src={selectedImage}
+              alt="Imagen seleccionada"
+              style={{
+                maxWidth: "100%",
+                maxHeight: "100%",
+                borderRadius: "15px",
+                marginTop: "15px",
+                marginBottom: "15px",
+              }}
+            />
+          ) : (
+            <p>Arrastra y suelta una imagen.</p>
+          )}
+          <input
+            type="file"
+            accept="image/*"
+            style={{ display: "none" }}
+            onChange={handleImageUpload}
+          />
+        </div>
+        <div
+          style={{
+            width: "300px",
+            float: "left",
+            marginRight: "20px",
+            marginLeft: "10px",
+            marginBottom: "20px",
+            borderRadius: "15px",
+            border: "2px solid black",
+            backgroundColor: "#f0f0f0",
+            height: "600px",
+            display: "flex",
+            flexDirection: "column",
+            alignItems: "center",
+          }}
+        >
+          <h1 style={{ marginLeft: "30px" }}>Título del artículo</h1>
+
+          <div
+            style={{
+              border: "2px solid black",
+              backgroundColor: "#f0f0f0",
+              marginBottom: "20px",
+              height: "250px",
+              width: "200px",
+              borderRadius: "15px",
+            }}
+          ></div>
+          <div
+            style={{
+              border: "2px solid black",
+              backgroundColor: "#f0f0f0",
+              marginBottom: "20px",
+              height: "250px",
+              width: "200px",
+              borderRadius: "15px",
+            }}
+          ></div>
         </div>
         <h3>Escrito por:</h3>
         <div className="article-content">
@@ -132,14 +200,12 @@ const Articulo = () => {
               border: "2px solid black",
               backgroundColor: "#f0f0f0",
               marginBottom: "20px",
-              height: "200px",
+              height: "40px",
               borderRadius: "15px",
-              width: "300px",
+              width: "100%",
               alignItems: "end",
             }}
-          >
-            {/* Placeholder de texto Lorem Ipsum */}
-          </div>
+          ></div>
         </div>
       </div>
     </div>
