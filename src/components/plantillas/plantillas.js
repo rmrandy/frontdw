@@ -3,7 +3,7 @@ import React, { useState } from "react";
 const Articulo = () => {
   const [selectedImage, setSelectedImage] = useState(null);
 
-  // Función para manejar la carga de la imagen
+  
   const handleImageUpload = (e) => {
     const imageFile = e.target.files[0];
     if (imageFile) {
@@ -12,7 +12,7 @@ const Articulo = () => {
     }
   };
 
-  // Función para manejar el drag and drop de la imagen
+  
   const handleDrop = (e) => {
     e.preventDefault();
     const imageFile = e.dataTransfer.files[0];
@@ -22,7 +22,7 @@ const Articulo = () => {
     }
   };
 
-  // Evita que el navegador abra la imagen al soltarla
+  
   const preventDefault = (e) => {
     e.preventDefault();
   };

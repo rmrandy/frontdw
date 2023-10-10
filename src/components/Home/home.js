@@ -129,7 +129,7 @@ export default function Home() {
       <Carousel>
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} />
+            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}}  alt="Bad Bunny"/>
             <div
               style={{
                 display: "flex",
@@ -184,7 +184,7 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} />
+            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} alt="Bad Bunny" />
             <div
               style={{
                 display: "flex",
@@ -237,7 +237,7 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} />
+            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} alt="Bad Bunny"/>
             <div
               style={{
                 display: "flex",
@@ -292,7 +292,7 @@ export default function Home() {
       <Carousel>
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px"}} />
+            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px"}} alt="Bad Bunny" />
             <div
               style={{
                 display: "flex",
@@ -344,7 +344,7 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" ,}} />
+            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" }} alt="Bad Bunny" />
             <div
               style={{
                 display: "flex",
@@ -396,7 +396,7 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" }} />
+            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" }} alt="Bad Bunny" />
             <div
               style={{
                 display: "flex",

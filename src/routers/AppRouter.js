@@ -11,11 +11,9 @@ import Home from "../components/Home/home";
 import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
 import Plantilla from "../components/registroProductos/registroProducto";
 import Articulos from "../components/Articulos/Articulos";
-// import Categorias from "../components/Categorías/Categorias";
-// import Categorias from "../components/Categorias/Categorias";
 import Prueba from "../components/Prueba/prueba"
 import Plantillas from "../components/plantillas/plantillas"
-
+import Articulo2 from "../components/Articulo2/Articulo2";
 
 
 
@@ -35,10 +33,11 @@ function AppRouter() {
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
-          {/* <Route path="/categoria" component={Categorias} /> */}
           <Route path="/categorías_gratis" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
+          <Route path="/articulo2" component={Articulo2} /> 
         </Switch>
+
       ) : tipoUsuario === 2 ? (
         <Switch>
           <Route path="/signUp" component={SignUp} />
@@ -48,7 +47,7 @@ function AppRouter() {
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías_gratis" component={Prueba} /> 
-          <Route path="/plantilla_noticia" component={Plantillas} /> 
+          <Route path="/articulo2" component={Articulo2} /> 
         </Switch>
       ) : tipoUsuario === 3 ? (
         <Switch>
@@ -60,6 +59,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
+          <Route path="/articulo2" component={Articulo2} /> 
         </Switch>
       ) : (
         <Switch>
@@ -71,6 +71,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
+          <Route path="/articulo2" component={Articulo2} /> 
         </Switch>
       )}
     </Router>

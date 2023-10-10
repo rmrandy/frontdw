@@ -5,14 +5,14 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { LoginContext } from "../../context/contexto";
-import { useContext, useState } from "react"; // Importa useState
+import { useContext, useState } from "react"; 
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-import { Link } from "react-router-dom"; // Agrega la importación de Link
+// import { Link } from "react-router-dom"; 
 
 export default function Header() {
   const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
-  const [categoryMenuAnchorEl, setCategoryMenuAnchorEl] = useState(null);
+  const [ setCategoryMenuAnchorEl] = useState(null);
 
   const handleProfileClick = (event) => {
     setProfileMenuAnchorEl(event.currentTarget);
@@ -98,7 +98,7 @@ export default function Header() {
               <MenuItem onClick={handleCloseProfileMenu}>Premium</MenuItem>
               <MenuItem onClick={handleCloseProfileMenu}>Gratuito</MenuItem>
             </Menu>
-            <Button color="inherit" href="/categorías"> {/* Cambia la ruta a "/categorías" */}
+            <Button color="inherit" href="/categorías"> 
               Plantillas
             </Button>
             <Button color="inherit" href="/home">

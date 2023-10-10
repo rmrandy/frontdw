@@ -1,0 +1,32 @@
+.article-container {
+    display: flex;
+    margin-bottom: 20px;
+    font-family: "New York Times", sans-serif; 
+  }
+  
+  .article-image {
+    width: 300px; 
+    height: auto; 
+    margin-right: 20px; 
+  }
+  
+  .article-content {
+    flex: 1;
+  }
+  
+  .article-title {
+    font-size: 24px; 
+    font-weight: bold;
+    margin-bottom: 10px; 
+  }
+  
+  .article-description {
+    font-size: 16px; 
+    margin-bottom: 10px; 
+  }
+  
+  .article-author {
+    font-size: 14px; 
+    color: #888; 
+  }
+  
