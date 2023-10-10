@@ -8,7 +8,7 @@ import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
 import { LoginContext } from '../../context/contexto';
-import { useContext, useState } from 'react';
+import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './../SignIn/signin.css';
 import Typography from '@mui/material/Typography';
@@ -19,8 +19,7 @@ const theme = createTheme();
 
 export default function SignIn() {
   const {
-    setUsername,
-    setTipoUsuario,
+   
   } = useContext(LoginContext);
 
   const history = useHistory();
