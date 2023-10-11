@@ -50,8 +50,8 @@ function App() {
     <Router>
       <div className="App">
         <LoginContext.Provider value={{ username, setUsername, setTipoUsuario, tipoUsuario }}>
+          <AppRouter /> 
           <Header />
-          <AppRouter />
         </LoginContext.Provider>
       </div>
     </Router>

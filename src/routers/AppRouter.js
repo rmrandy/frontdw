@@ -3,10 +3,11 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
+  Redirect,
 } from "react-router-dom";
+import SignIn from "../components/SignIn/SignIn";
 import { LoginContext } from "../context/contexto";
 import SignUp from "../components/SignUp/SignUp";
-import SignIn from "../components/SignIn/SignIn";
 import Home from "../components/Home/home";
 import RegistroRevista from "../components/RegistroRevista/RegistroRevista";
 import Plantilla from "../components/registroProductos/registroProducto";
@@ -27,8 +28,9 @@ function AppRouter() {
     <Router>
       {tipoUsuario === 1 ? (
         <Switch>
-          <Route path="/signUp" component={SignUp} />
+          <Redirect from="/" to="/login" exact />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/signUp" component={SignUp} />
           <Route path="/registroRevista" component={RegistroRevista} />
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
@@ -40,8 +42,8 @@ function AppRouter() {
 
       ) : tipoUsuario === 2 ? (
         <Switch>
-          <Route path="/signUp" component={SignUp} />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/signUp" component={SignUp} />
           <Route path="/registroRevista" component={RegistroRevista} />
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
@@ -51,8 +53,8 @@ function AppRouter() {
         </Switch>
       ) : tipoUsuario === 3 ? (
         <Switch>
-          <Route path="/signUp" component={SignUp} />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/signUp" component={SignUp} />
           <Route path="/registroRevista" component={RegistroRevista} />
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
@@ -63,8 +65,9 @@ function AppRouter() {
         </Switch>
       ) : (
         <Switch>
-          <Route path="/signUp" component={SignUp} />
+          <Redirect from="/" to="/signIn" exact />
           <Route path="/signIn" component={SignIn} />
+          <Route path="/signUp" component={SignUp} />
           <Route path="/registroRevista" component={RegistroRevista} />
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
