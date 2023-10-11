@@ -33,9 +33,42 @@ function Articulo2() {
             Fusce a odio velit. Praesent id ligula ac augue posuere tincidunt non
             eu est.
           </p>
-          {/* Otro contenido de texto */}
+          <p>
+            Sed vel erat aliquet, fringilla justo eu, malesuada ligula. Nulla
+            facilisi. Aenean sit amet justo id ex luctus eleifend. Curabitur a
+            libero eu orci suscipit venenatis. Sed tristique nisl eu nulla
+            ultricies, vel convallis erat mattis. Nunc ut est sit amet neque
+            auctor ultrices. Integer et diam mi. Vestibulum id venenatis lorem.
+          </p>
+          <p>
+            Donec blandit vitae quam a accumsan. Fusce quis iaculis lorem. Nullam
+            sit amet dui ut ex tincidunt tincidunt. Sed nec vehicula lorem. Sed
+            euismod dui eu ipsum consequat, non laoreet tortor malesuada. Fusce
+            vehicula ligula eu tellus ullamcorper, nec facilisis ligula finibus.
+          </p>
+          <div className="article-inline-image">
+            <img
+              src={foto}
+              alt="The Weeknd"
+              className="inline-article-image"
+            />
+          </div>
+          <p>
+            Nam suscipit, massa et aliquam tincidunt, leo turpis tincidunt velit,
+            non vestibulum metus sapien ut purus. Vivamus in risus lacinia,
+            hendrerit justo vel, congue massa. Etiam congue, nulla ac mattis
+            ullamcorper, elit neque tincidunt tortor, at mattis justo elit id
+            ante.
+          </p>
+          <p>
+            Praesent id dolor id justo iaculis varius eget vitae libero. Sed sit
+            amet purus vel odio pellentesque tristique ut vitae elit. Vivamus non
+            auctor dolor. Nunc id viverra velit. Phasellus eget dictum urna.
+          </p>
         </div>
-        <p className="article-author">Escrito por: Nombre del Autor</p>
+        <div className="article-author-container">
+          <p className="article-author">Escrito por: Nombre del Autor</p>
+        </div>
       </div>
     </div>
   );

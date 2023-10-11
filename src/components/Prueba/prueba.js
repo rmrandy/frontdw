@@ -9,7 +9,7 @@ const Categorias = () => {
   return (
     <div className="categorias-container" style={{ height: "100vh" }}>
       <div className="category">
-        <Link to="/plantilla_noticia" style={{ textDecoration: "none" }}>
+        <Link to="/plantilla_noticia">
           <div className="category-content">
             <div className="category-image">
               <img
