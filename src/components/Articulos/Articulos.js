@@ -26,6 +26,7 @@ const Articulo = () => {
             src={otroBB}
             style={{
               maxWidth: "50%",
+              maxHeight: "50%",
               float: "right",
               marginLeft: "20px",
               marginBottom: "20px",
@@ -51,7 +52,7 @@ const Articulo = () => {
             Nunc interdum velit vel lacinia bibendum.
           </p>
 
-          <h2>Conclusiones</h2>
+          <h2>¿Cómo ha influido en la moda y en la musica?</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             eget metus nec sapien vestibulum auctor. Nulla facilisi. Fusce
@@ -65,9 +66,7 @@ const Articulo = () => {
             ipsum non urna sollicitudin tincidunt.
           </p>
           <br />
-          <br />
-          <br />
-          <h2>Recomendaciones</h2>
+          <h2>¿Qué sigue despues?</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
             eget metus nec sapien vestibulum auctor. Nulla facilisi. Fusce
@@ -83,14 +82,7 @@ const Articulo = () => {
           <br/>
           <br/>
           <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
-          <br/>
+          
           <br/>
           <h3>Escrito por: </h3>
           <p>

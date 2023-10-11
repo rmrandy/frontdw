@@ -33,7 +33,7 @@ function AppRouter() {
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
-          <Route path="/categorías_gratis" component={Prueba} /> 
+          <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
           <Route path="/articuloTW" component={Articulo2} /> 
         </Switch>
@@ -46,7 +46,7 @@ function AppRouter() {
           <Route path="/home" component={Home} />
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
-          <Route path="/categorías_gratis" component={Prueba} /> 
+          <Route path="/categorías" component={Prueba} /> 
           <Route path="/articuloTW" component={Articulo2} /> 
         </Switch>
       ) : tipoUsuario === 3 ? (

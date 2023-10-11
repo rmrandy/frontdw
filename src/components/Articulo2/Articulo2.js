@@ -7,9 +7,6 @@ function Articulo2() {
     <div className="article-container">
       <div className="article-content-container">
         <h1 className="article-title">Título del Artículo</h1>
-        <div className="article-author-container">
-          <p className="article-author">Escrito por: Nombre del Autor</p>
-        </div>
         <div className="article-image-container">
           <img src={foto} alt="The Weeknd" className="article-image" />
         </div>
@@ -22,6 +19,13 @@ function Articulo2() {
             euismod, eleifend est eu, fermentum orci. Proin vel mi lectus. Fusce
             non nisl quis arcu suscipit tincidunt.
           </p>
+          <div className="article-inline-image">
+            <img
+              src={foto}
+              alt="The Weeknd"
+              className="inline-article-image"
+            />
+          </div>
           <p>
             Nullam id eleifend metus. Etiam vel arcu odio. Vivamus et lectus sit
             amet odio bibendum mattis. Nam suscipit felis id nunc blandit, a
@@ -29,20 +33,9 @@ function Articulo2() {
             Fusce a odio velit. Praesent id ligula ac augue posuere tincidunt non
             eu est.
           </p>
-          <p>
-            Vestibulum sollicitudin odio ut justo tincidunt, euismod pellentesque
-            turpis elementum. Donec mattis nec erat eu vestibulum. Integer in arcu
-            vel quam euismod dignissim. Nam nec dolor a nisl vulputate mattis.
-            Etiam vulputate enim vel interdum facilisis.
-          </p>
-          <p>
-            Curabitur facilisis justo nec odio malesuada, id blandit arcu
-            malesuada. In eu justo sed leo cursus aliquam. Sed eget nibh eget
-            velit iaculis tristique. Fusce a congue felis, a semper erat. Nam
-            pharetra, nisl id dapibus dictum, lectus velit consectetur dolor, at
-            auctor turpis erat vel lorem.
-          </p>
+          {/* Otro contenido de texto */}
         </div>
+        <p className="article-author">Escrito por: Nombre del Autor</p>
       </div>
     </div>
   );
