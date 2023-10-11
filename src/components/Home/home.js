@@ -29,7 +29,7 @@ const handleSubmit = (event) => {
 
 export default function Home() {
   const [datos, setDatos] = React.useState([[]]);
-  const [diseño, setdiseño] = React.useState([[]]);
+  const [, setdiseño] = React.useState([[]]);
   const [prods, setProds] = React.useState([[]]);
   const [box1, setBox1] = React.useState([]);
   const [box2, setBox2] = React.useState([]);

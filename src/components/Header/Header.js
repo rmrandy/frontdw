@@ -12,23 +12,23 @@ import MenuItem from "@mui/material/MenuItem";
 
 export default function Header() {
   const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
-  const [ setCategoryMenuAnchorEl] = useState(null);
+  // const [ setCategoryMenuAnchorEl] = useState(null);
 
   const handleProfileClick = (event) => {
     setProfileMenuAnchorEl(event.currentTarget);
   };
 
-  const handleCategoryClick = (event) => {
-    setCategoryMenuAnchorEl(event.currentTarget);
-  };
+  // const handleCategoryClick = (event) => {
+  //   setCategoryMenuAnchorEl(event.currentTarget);
+  // };
 
   const handleCloseProfileMenu = () => {
     setProfileMenuAnchorEl(null);
   };
 
-  const handleCloseCategoryMenu = () => {
-    setCategoryMenuAnchorEl(null);
-  };
+  // const handleCloseCategoryMenu = () => {
+  //   setCategoryMenuAnchorEl(null);
+  // };
 
   const { setUsername, setTipoUsuario, tipoUsuario } = useContext(LoginContext);
 

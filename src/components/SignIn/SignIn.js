@@ -7,8 +7,8 @@ import Checkbox from '@mui/material/Checkbox';
 import Link from '@mui/material/Link';
 import Grid from '@mui/material/Grid';
 import Box from '@mui/material/Box';
-import { LoginContext } from '../../context/contexto';
-import { useContext } from 'react';
+// import { LoginContext } from '../../context/contexto';
+// import { useContext } from 'react';
 import { useHistory } from 'react-router-dom';
 import './../SignIn/signin.css';
 import Typography from '@mui/material/Typography';
@@ -18,9 +18,10 @@ import { createTheme, ThemeProvider } from '@mui/material/styles';
 const theme = createTheme();
 
 export default function SignIn() {
-  const {
-   
-  } = useContext(LoginContext);
+  // const {
+  //   setUsername,
+  //   setTipoUsuario,
+  // } = useContext(LoginContext);
 
   const history = useHistory();
 

@@ -35,7 +35,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías_gratis" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
-          <Route path="/articulo2" component={Articulo2} /> 
+          <Route path="/articuloTW" component={Articulo2} /> 
         </Switch>
 
       ) : tipoUsuario === 2 ? (
@@ -47,7 +47,7 @@ function AppRouter() {
           <Route path="/plantilla" component={Plantilla} />
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías_gratis" component={Prueba} /> 
-          <Route path="/articulo2" component={Articulo2} /> 
+          <Route path="/articuloTW" component={Articulo2} /> 
         </Switch>
       ) : tipoUsuario === 3 ? (
         <Switch>
@@ -59,7 +59,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
-          <Route path="/articulo2" component={Articulo2} /> 
+          <Route path="/articuloTW" component={Articulo2} /> 
         </Switch>
       ) : (
         <Switch>
@@ -71,7 +71,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
-          <Route path="/articulo2" component={Articulo2} /> 
+          <Route path="/articuloTW" component={Articulo2} /> 
         </Switch>
       )}
     </Router>
