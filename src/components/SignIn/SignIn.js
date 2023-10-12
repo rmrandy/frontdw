@@ -12,6 +12,7 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../Home/assets/Black and White Minimalist Modern Clean Technology Logo .jpg";
 
+
 const theme = createTheme();
 
 export default function SignIn() {
@@ -51,7 +52,7 @@ export default function SignIn() {
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "15px",
-          marginTop: "30px",
+          marginTop: "40px",
           marginBottom: "30px",
         }}
       >

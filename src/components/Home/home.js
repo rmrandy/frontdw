@@ -9,6 +9,9 @@ import axios from "axios";
 import HomeBox from "../HomeBox/HomeBox";
 import InfoBox from "./InfoBox/InfoBox";
 import { Link } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'
+import '../Home/toast.css'
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -119,73 +122,97 @@ export default function Home() {
       });
   });
 
+  const mostrarNotificacionCarga = () => {
+    toast.info("Tu artículo está cargando", {
+      position: "",
+      autoClose: 4000,
+    });
+  };
+
   return (
     <div
       style={{
         padding: "1% 5%",
-        marginTop: "50px"
+        marginTop: "50px",
       }}
     >
-      <h1 style={{ color: "white"  , marginBottom: "30px"}}>Mejores Articulos</h1>
+      <h1 style={{ color: "white", marginBottom: "30px" }}>
+        Mejores Articulos
+      </h1>
       <Carousel>
         {prods.map((ro) => (
-          <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}}  alt="Bad Bunny"/>
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
-                maxWidth: "calc(100% - 310px)",
-              }}
-            >
+          <div>
+            <div style={{ display: "flex", alignItems: "flex-start" }}>
+              <img
+                src={fotobb}
+                style={{ marginRight: "10px", borderRadius: "15px" }}
+                alt="Bad Bunny"
+              />
               <div
                 style={{
                   display: "flex",
-                  justifyContent: "space-between",
-                  marginLeft: "10px",
-                  marginRight: "85px",
+                  flexDirection: "column",
+                  width: "100%",
+                  maxWidth: "calc(100% - 310px)",
                 }}
               >
-                <Link
-                  to="/articuloBB"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <h1 style={{ marginRight: "85px", color: "white" }}>
-                    ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
-                  </h1>
-                </Link>
                 <div
                   style={{
-                    textAlign: "justify",
-                    flex: "1",
-                    paddingLeft: "85px",
+                    display: "flex",
+                    justifyContent: "space-between",
+                    marginLeft: "10px",
+                    marginRight: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" }}>
-                    Bad Bunny, cuyo nombre real es Benito Antonio Martínez
-                    Ocasio, es un influyente cantante, rapero y compositor
-                    puertorriqueño que ha revolucionado la industria musical con
-                    su estilo único y su enfoque innovador. Con su distintiva
-                    mezcla de géneros que incluyen reguetón, trap y música
-                    urbana, Bad Bunny ha conquistado los corazones de millones
-                    de fanáticos en todo el mundo. Bad Bunny, cuyo nombre real
-                    es Benito Antonio Martínez Ocasio, es un influyente
-                    cantante, rapero y compositor puertorriqueño que ha
-                    revolucionado la industria musical con su estilo único y su
-                    enfoque innovador. Con su distintiva mezcla de géneros que
-                    incluyen reguetón, trap y música urbana, Bad Bunny ha
-                    conquistado los corazones de millones de fanáticos en todo
-                    el mundo.
-                  </p>
+                  <Link
+                    to="/articuloBB"
+                    style={{ textDecoration: "none", color: "inherit" }}
+                  >
+                    <h1
+                      style={{ marginRight: "85px", color: "white" }}
+                      onClick={mostrarNotificacionCarga}
+                    >
+                      ¿Por qué Bad Bunny es el mejor Artista de todos los
+                      tiempos?
+                    </h1>
+                  </Link>
+                  <div
+                    style={{
+                      textAlign: "justify",
+                      flex: "1",
+                      paddingLeft: "85px",
+                    }}
+                  >
+                    <p style={{ marginRight: "85px", color: "white" }}>
+                      Bad Bunny, cuyo nombre real es Benito Antonio Martínez
+                      Ocasio, es un influyente cantante, rapero y compositor
+                      puertorriqueño que ha revolucionado la industria musical
+                      con su estilo único y su enfoque innovador. Con su
+                      distintiva mezcla de géneros que incluyen reguetón, trap y
+                      música urbana, Bad Bunny ha conquistado los corazones de
+                      millones de fanáticos en todo el mundo. Bad Bunny, cuyo
+                      nombre real es Benito Antonio Martínez Ocasio, es un
+                      influyente cantante, rapero y compositor puertorriqueño
+                      que ha revolucionado la industria musical con su estilo
+                      único y su enfoque innovador. Con su distintiva mezcla de
+                      géneros que incluyen reguetón, trap y música urbana, Bad
+                      Bunny ha conquistado los corazones de millones de
+                      fanáticos en todo el mundo.
+                    </p>
+                  </div>
                 </div>
               </div>
             </div>
+            <ToastContainer />
           </div>
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} alt="Bad Bunny" />
+            <img
+              src={fotobb}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
             <div
               style={{
                 display: "flex",
@@ -238,7 +265,11 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb} style={{ marginRight: "10px" , borderRadius: "15px"}} alt="Bad Bunny"/>
+            <img
+              src={fotobb}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
             <div
               style={{
                 display: "flex",
@@ -289,11 +320,17 @@ export default function Home() {
           </div>
         ))}
       </Carousel>
-      <h1 style={{ color: "white" , marginTop: "50px" , marginBottom: "50px" }}>Articulos Más Nuevos</h1>
+      <h1 style={{ color: "white", marginTop: "50px", marginBottom: "50px" }}>
+        Articulos Más Nuevos
+      </h1>
       <Carousel>
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px"}} alt="Bad Bunny" />
+            <img
+              src={fotobb2}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
             <div
               style={{
                 display: "flex",
@@ -314,7 +351,13 @@ export default function Home() {
                   to="/articuloBB"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <h1 style={{ marginRight: "85px", color: "white" , marginTop:"150px"}}>
+                  <h1
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "150px",
+                    }}
+                  >
                     ¿Cúal es la mejor canción de bad Bunny?
                   </h1>
                 </Link>
@@ -325,7 +368,13 @@ export default function Home() {
                     paddingLeft: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" ,  marginTop:"100px" }}>
+                  <p
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "100px",
+                    }}
+                  >
                     Bad Bunny, nacido el 10 de marzo de 1994 en Vega Baja,
                     Puerto Rico, es un artista que ha logrado trascender
                     fronteras geográficas y culturales. Su música, que a menudo
@@ -345,7 +394,11 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" }} alt="Bad Bunny" />
+            <img
+              src={fotobb2}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
             <div
               style={{
                 display: "flex",
@@ -366,7 +419,13 @@ export default function Home() {
                   to="/articuloBB"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <h1 style={{ marginRight: "85px", color: "white" ,  marginTop:"150px"}}>
+                  <h1
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "150px",
+                    }}
+                  >
                     ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
                   </h1>
                 </Link>
@@ -377,7 +436,13 @@ export default function Home() {
                     paddingLeft: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" , marginTop:"100px"}}>
+                  <p
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "100px",
+                    }}
+                  >
                     A lo largo de su carrera, Bad Bunny ha lanzado una serie de
                     álbumes exitosos, incluyendo "X 100pre," "YHLQMDLG" y "El
                     Último Tour Del Mundo." Sus colaboraciones con otros
@@ -397,7 +462,11 @@ export default function Home() {
         ))}
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img src={fotobb2} style={{ marginRight: "10px" , borderRadius: "15px" }} alt="Bad Bunny" />
+            <img
+              src={fotobb2}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
             <div
               style={{
                 display: "flex",
@@ -418,7 +487,13 @@ export default function Home() {
                   to="/articuloBB"
                   style={{ textDecoration: "none", color: "inherit" }}
                 >
-                  <h1 style={{ marginRight: "85px", color: "white"  ,  marginTop:"150px" }}>
+                  <h1
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "150px",
+                    }}
+                  >
                     ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
                   </h1>
                 </Link>
@@ -429,18 +504,23 @@ export default function Home() {
                     paddingLeft: "85px",
                   }}
                 >
-                  <p style={{ marginRight: "85px", color: "white" , marginTop:"100px"}}>
+                  <p
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "100px",
+                    }}
+                  >
                     Bad Bunny también ha incursionado en el mundo de la
                     actuación, haciendo apariciones en películas y programas de
                     televisión. Su carisma y presencia en pantalla lo han
                     convertido en un nombre familiar en la industria del
-                    entretenimiento. 
-                    <br/>
-                      
-                    Bad Bunny también ha incursionado en el
-                    mundo de la actuación, haciendo apariciones en películas y
-                    programas de televisión. Su carisma y presencia en pantalla
-                    lo han convertido en un nombre familiar en la industria del
+                    entretenimiento.
+                    <br />
+                    Bad Bunny también ha incursionado en el mundo de la
+                    actuación, haciendo apariciones en películas y programas de
+                    televisión. Su carisma y presencia en pantalla lo han
+                    convertido en un nombre familiar en la industria del
                     entretenimiento.
                   </p>
                 </div>
