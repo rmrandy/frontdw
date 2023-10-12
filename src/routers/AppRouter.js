@@ -15,6 +15,7 @@ import Articulos from "../components/Articulos/Articulos";
 import Prueba from "../components/Prueba/prueba"
 import Plantillas from "../components/plantillas/plantillas"
 import Articulo2 from "../components/Articulo2/Articulo2";
+import PerfilAdmin from "../components/Perfiles/Admin"
 
 
 
@@ -38,6 +39,7 @@ function AppRouter() {
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
           <Route path="/articuloTW" component={Articulo2} /> 
+          <Route path="/admin" component={PerfilAdmin} /> 
         </Switch>
 
       ) : tipoUsuario === 2 ? (
@@ -50,6 +52,7 @@ function AppRouter() {
           <Route path="/articuloBB" component={Articulos} />
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/articuloTW" component={Articulo2} /> 
+          <Route path="/admin" component={PerfilAdmin} /> 
         </Switch>
       ) : tipoUsuario === 3 ? (
         <Switch>
@@ -62,6 +65,7 @@ function AppRouter() {
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
           <Route path="/articuloTW" component={Articulo2} /> 
+          <Route path="/admin" component={PerfilAdmin} /> 
         </Switch>
       ) : (
         <Switch>
@@ -75,6 +79,7 @@ function AppRouter() {
           <Route path="/categorías" component={Prueba} /> 
           <Route path="/plantilla_noticia" component={Plantillas} /> 
           <Route path="/articuloTW" component={Articulo2} /> 
+          <Route path="/admin" component={PerfilAdmin} /> 
         </Switch>
       )}
     </Router>

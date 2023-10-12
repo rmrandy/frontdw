@@ -5,42 +5,51 @@ import Toolbar from "@mui/material/Toolbar";
 import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { LoginContext } from "../../context/contexto";
-import { useContext, useState } from "react"; 
+import { useContext, useState, useEffect } from "react";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
-// import { Link } from "react-router-dom"; 
 
 export default function Header() {
   const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
-  // const [ setCategoryMenuAnchorEl] = useState(null);
+  const [scrolling, setScrolling] = useState(false);
 
   const handleProfileClick = (event) => {
     setProfileMenuAnchorEl(event.currentTarget);
   };
 
-  // const handleCategoryClick = (event) => {
-  //   setCategoryMenuAnchorEl(event.currentTarget);
-  // };
-
   const handleCloseProfileMenu = () => {
     setProfileMenuAnchorEl(null);
   };
-
-  // const handleCloseCategoryMenu = () => {
-  //   setCategoryMenuAnchorEl(null);
-  // };
 
   const { setUsername, setTipoUsuario, tipoUsuario } = useContext(LoginContext);
 
   const logout = () => {
     setUsername("");
-    setTipoUsuario("4");
+    setTipoUsuario("4", "1", "2", "3");
     localStorage.setItem("id_usuario", "");
   };
 
+  useEffect(() => {
+    window.addEventListener("scroll", () => {
+      if (window.scrollY > 0 && !scrolling) {
+        setScrolling(true);
+      } else if (window.scrollY === 0 && scrolling) {
+        setScrolling(false);
+      }
+    });
+  }, [scrolling]);
+
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar position="static" sx={{ backgroundColor: "#26465F" }}>
+      <AppBar
+        position="fixed"
+        sx={{
+          background: scrolling
+            ? "linear-gradient(to bottom, #26465F, #B3C2E8)"
+            : "linear-gradient(to bottom, #26465F, #26465F)",
+          transition: "background 6s",
+        }}
+      >
         {tipoUsuario === 1 ? (
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
@@ -98,7 +107,7 @@ export default function Header() {
               <MenuItem onClick={handleCloseProfileMenu}>Premium</MenuItem>
               <MenuItem onClick={handleCloseProfileMenu}>Gratuito</MenuItem>
             </Menu>
-            <Button color="inherit" href="/categorías"> 
+            <Button color="inherit" href="/categorías">
               Plantillas
             </Button>
             <Button color="inherit" href="/home">
@@ -110,4 +119,3 @@ export default function Header() {
     </Box>
   );
 }
-

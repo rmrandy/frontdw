@@ -123,6 +123,7 @@ export default function Home() {
     <div
       style={{
         padding: "1% 5%",
+        marginTop: "50px"
       }}
     >
       <h1 style={{ color: "white"  , marginBottom: "30px"}}>Mejores Articulos</h1>
