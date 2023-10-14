@@ -7,7 +7,9 @@ import Button from "@mui/material/Button";
 import { LoginContext } from "../../context/contexto";
 import { useContext, useState, useEffect } from "react";
 import Menu from "@mui/material/Menu";
+import { Link } from 'react-router-dom';
 import MenuItem from "@mui/material/MenuItem";
+import foto from "../Home/assets/EE3349FA-E81E-49A2-BA8B-3585D2243FA2_4_5005_c.jpeg";
 
 export default function Header() {
   const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
@@ -86,7 +88,18 @@ export default function Header() {
         ) : (
           <Toolbar>
             <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
-              Articulos
+              <Link to="/home" style={{ textDecoration: "none" }}>
+                <img
+                  src={foto}
+                  alt="Logo"
+                  style={{
+                    width: "200px",
+                    height: "80px",
+                    marginTop: "5px",
+                    borderRadius: "15px",
+                  }}
+                />
+              </Link>
             </Typography>
             <Button color="inherit" onClick={handleProfileClick}>
               Perfil

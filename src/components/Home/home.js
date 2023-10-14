@@ -10,8 +10,8 @@ import HomeBox from "../HomeBox/HomeBox";
 import InfoBox from "./InfoBox/InfoBox";
 import { Link } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css'
-import '../Home/toast.css'
+import "react-toastify/dist/ReactToastify.css";
+import "../Home/toast.css";
 
 const handleSubmit = (event) => {
   event.preventDefault();
@@ -31,6 +31,36 @@ const handleSubmit = (event) => {
 };
 
 export default function Home() {
+
+  React.useEffect(() => {
+    
+    const storedData = localStorage.getItem("carouselData");
+    if (storedData) {
+      
+      const parsedData = JSON.parse(storedData);
+      setDatos(parsedData);
+    } else {
+      
+      const defaultData = [
+        
+        {
+          title: "Título 1",
+          image: "imagen1.jpg",
+        },
+        {
+          title: "Título 2",
+          image: "imagen2.jpg",
+        },
+      ];
+      setDatos(defaultData);
+
+      
+      localStorage.setItem("carouselData", JSON.stringify(defaultData));
+    }
+
+    
+  });
+
   const [datos, setDatos] = React.useState([[]]);
   const [, setdiseño] = React.useState([[]]);
   const [prods, setProds] = React.useState([[]]);
@@ -133,7 +163,7 @@ export default function Home() {
     <div
       style={{
         padding: "1% 5%",
-        marginTop: "50px",
+        marginTop: "100px",
       }}
     >
       <h1 style={{ color: "white", marginBottom: "30px" }}>
@@ -141,193 +171,9 @@ export default function Home() {
       </h1>
       <Carousel>
         {prods.map((ro) => (
-          <div>
-            <div style={{ display: "flex", alignItems: "flex-start" }}>
-              <img
-                src={fotobb}
-                style={{ marginRight: "10px", borderRadius: "15px" }}
-                alt="Bad Bunny"
-              />
-              <div
-                style={{
-                  display: "flex",
-                  flexDirection: "column",
-                  width: "100%",
-                  maxWidth: "calc(100% - 310px)",
-                }}
-              >
-                <div
-                  style={{
-                    display: "flex",
-                    justifyContent: "space-between",
-                    marginLeft: "10px",
-                    marginRight: "85px",
-                  }}
-                >
-                  <Link
-                    to="/articuloBB"
-                    style={{ textDecoration: "none", color: "inherit" }}
-                  >
-                    <h1
-                      style={{ marginRight: "85px", color: "white" }}
-                      onClick={mostrarNotificacionCarga}
-                    >
-                      ¿Por qué Bad Bunny es el mejor Artista de todos los
-                      tiempos?
-                    </h1>
-                  </Link>
-                  <div
-                    style={{
-                      textAlign: "justify",
-                      flex: "1",
-                      paddingLeft: "85px",
-                    }}
-                  >
-                    <p style={{ marginRight: "85px", color: "white" }}>
-                      Bad Bunny, cuyo nombre real es Benito Antonio Martínez
-                      Ocasio, es un influyente cantante, rapero y compositor
-                      puertorriqueño que ha revolucionado la industria musical
-                      con su estilo único y su enfoque innovador. Con su
-                      distintiva mezcla de géneros que incluyen reguetón, trap y
-                      música urbana, Bad Bunny ha conquistado los corazones de
-                      millones de fanáticos en todo el mundo. Bad Bunny, cuyo
-                      nombre real es Benito Antonio Martínez Ocasio, es un
-                      influyente cantante, rapero y compositor puertorriqueño
-                      que ha revolucionado la industria musical con su estilo
-                      único y su enfoque innovador. Con su distintiva mezcla de
-                      géneros que incluyen reguetón, trap y música urbana, Bad
-                      Bunny ha conquistado los corazones de millones de
-                      fanáticos en todo el mundo.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <ToastContainer />
-          </div>
-        ))}
-        {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
             <img
               src={fotobb}
-              style={{ marginRight: "10px", borderRadius: "15px" }}
-              alt="Bad Bunny"
-            />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
-                maxWidth: "calc(100% - 310px)",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginLeft: "10px",
-                  marginRight: "85px",
-                }}
-              >
-                <Link
-                  to="/articuloBB"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <h1 style={{ marginRight: "85px", color: "white" }}>
-                    ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
-                  </h1>
-                </Link>
-                <div
-                  style={{
-                    textAlign: "justify",
-                    flex: "1",
-                    paddingLeft: "85px",
-                  }}
-                >
-                  <p style={{ marginRight: "85px", color: "white" }}>
-                    Desde sus humildes comienzos en la Isla de Puerto Rico hasta
-                    convertirse en un fenómeno global, Bad Bunny ha desafiado
-                    las expectativas y ha dejado una marca imborrable en la
-                    música contemporánea. Sus letras poéticas y a veces
-                    provocativas abordan temas sociales y personales, conectando
-                    con audiencias de todas las edades. Desde sus humildes
-                    comienzos en la Isla de Puerto Rico hasta convertirse en un
-                    fenómeno global, Bad Bunny ha desafiado las expectativas y
-                    ha dejado una marca imborrable en la música contemporánea.
-                    Sus letras poéticas y a veces provocativas abordan temas
-                    sociales y personales, conectando con audiencias de todas
-                    las edades.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-        {prods.map((ro) => (
-          <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img
-              src={fotobb}
-              style={{ marginRight: "10px", borderRadius: "15px" }}
-              alt="Bad Bunny"
-            />
-            <div
-              style={{
-                display: "flex",
-                flexDirection: "column",
-                width: "100%",
-                maxWidth: "calc(100% - 310px)",
-              }}
-            >
-              <div
-                style={{
-                  display: "flex",
-                  justifyContent: "space-between",
-                  marginLeft: "10px",
-                  marginRight: "85px",
-                }}
-              >
-                <Link
-                  to="/articuloBB"
-                  style={{ textDecoration: "none", color: "inherit" }}
-                >
-                  <h1 style={{ marginRight: "85px", color: "white" }}>
-                    ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
-                  </h1>
-                </Link>
-                <div
-                  style={{
-                    textAlign: "justify",
-                    flex: "1",
-                    paddingLeft: "85px",
-                  }}
-                >
-                  <p style={{ marginRight: "85px", color: "white" }}>
-                    En resumen, Bad Bunny es mucho más que un músico; es un
-                    artista multifacético que ha redefinido la música latina y
-                    ha dejado una huella perdurable en la industria del
-                    entretenimiento. Su impacto continuará resonando en los
-                    corazones de sus seguidores y en la cultura pop durante
-                    muchos años por venir. En resumen, Bad Bunny es mucho más
-                    que un músico; es un artista multifacético que ha redefinido
-                    la música latina y ha dejado una huella perdurable en la
-                    industria del entretenimiento. Su impacto continuará
-                    resonando en los corazones de sus seguidores y en la cultura
-                    pop durante muchos años por venir.
-                  </p>
-                </div>
-              </div>
-            </div>
-          </div>
-        ))}
-      </Carousel>
-      <h1 style={{ color: "white", marginTop: "50px", marginBottom: "50px" }}>
-        Articulos Más Nuevos
-      </h1>
-      <Carousel>
-        {prods.map((ro) => (
-          <div style={{ display: "flex", alignItems: "flex-start" }}>
-            <img
-              src={fotobb2}
               style={{ marginRight: "10px", borderRadius: "15px" }}
               alt="Bad Bunny"
             />
@@ -395,7 +241,7 @@ export default function Home() {
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
             <img
-              src={fotobb2}
+              src={fotobb}
               style={{ marginRight: "10px", borderRadius: "15px" }}
               alt="Bad Bunny"
             />
@@ -463,7 +309,7 @@ export default function Home() {
         {prods.map((ro) => (
           <div style={{ display: "flex", alignItems: "flex-start" }}>
             <img
-              src={fotobb2}
+              src={fotobb}
               style={{ marginRight: "10px", borderRadius: "15px" }}
               alt="Bad Bunny"
             />
@@ -495,6 +341,218 @@ export default function Home() {
                     }}
                   >
                     ¿Por qué Bad Bunny es el mejor Artista de todos los tiempos?
+                  </h1>
+                </Link>
+                <div
+                  style={{
+                    textAlign: "justify",
+                    flex: "1",
+                    paddingLeft: "85px",
+                  }}
+                >
+                  <p
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "100px",
+                    }}
+                  >
+                    Bad Bunny también ha incursionado en el mundo de la
+                    actuación, haciendo apariciones en películas y programas de
+                    televisión. Su carisma y presencia en pantalla lo han
+                    convertido en un nombre familiar en la industria del
+                    entretenimiento.
+                    <br />
+                    Bad Bunny también ha incursionado en el mundo de la
+                    actuación, haciendo apariciones en películas y programas de
+                    televisión. Su carisma y presencia en pantalla lo han
+                    convertido en un nombre familiar en la industria del
+                    entretenimiento.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+      </Carousel>
+      <h1 style={{ color: "white", marginTop: "50px", marginBottom: "50px" }}>
+        Articulos Más Nuevos
+      </h1>
+      <Carousel>
+        {prods.map((ro) => (
+          <div style={{ display: "flex", alignItems: "flex-start" }}>
+            <img
+              src={fotobb2}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                maxWidth: "calc(100% - 310px)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginLeft: "10px",
+                  marginRight: "85px",
+                }}
+              >
+                <Link
+                  to="/articuloTW"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <h1
+                    className="h1-custom-style"
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "150px",
+                    }}
+                  >
+                    ¿Cuál es la mejor canción de Bad Bunny?
+                  </h1>
+                </Link>
+                <div
+                  style={{
+                    textAlign: "justify",
+                    flex: "1",
+                    paddingLeft: "85px",
+                  }}
+                >
+                  <p
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "100px",
+                    }}
+                  >
+                    Bad Bunny, nacido el 10 de marzo de 1994 en Vega Baja,
+                    Puerto Rico, es un artista que ha logrado trascender
+                    fronteras geográficas y culturales. Su música, que a menudo
+                    fusiona ritmos latinos con influencias de hip-hop y música
+                    electrónica, ha llevado el reguetón y el trap a un nivel
+                    completamente nuevo. Bad Bunny, nacido el 10 de marzo de
+                    1994 en Vega Baja, Puerto Rico, es un artista que ha logrado
+                    trascender fronteras geográficas y culturales. Su música,
+                    que a menudo fusiona ritmos latinos con influencias de
+                    hip-hop y música electrónica, ha llevado el reguetón y el
+                    trap a un nivel completamente nuevo.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {prods.map((ro) => (
+          <div style={{ display: "flex", alignItems: "flex-start" }}>
+            <img
+              src={fotobb2}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                maxWidth: "calc(100% - 310px)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginLeft: "10px",
+                  marginRight: "85px",
+                }}
+              >
+                <Link
+                  to="/articuloTW"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <h1
+                    className="h1-custom-style"
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "150px",
+                    }}
+                  >
+                    ¿Cuál es la mejor canción de Bad Bunny?
+                  </h1>
+                </Link>
+                <div
+                  style={{
+                    textAlign: "justify",
+                    flex: "1",
+                    paddingLeft: "85px",
+                  }}
+                >
+                  <p
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "100px",
+                    }}
+                  >
+                    A lo largo de su carrera, Bad Bunny ha lanzado una serie de
+                    álbumes exitosos, incluyendo "X 100pre," "YHLQMDLG" y "El
+                    Último Tour Del Mundo." Sus colaboraciones con otros
+                    artistas de renombre, como J Balvin, Cardi B y Drake, han
+                    dominado las listas de éxitos y han demostrado su
+                    versatilidad como intérprete. A lo largo de su carrera, Bad
+                    Bunny ha lanzado una serie de álbumes exitosos, incluyendo
+                    "X 100pre," "YHLQMDLG" y "El Último Tour Del Mundo." Sus
+                    colaboraciones con otros artistas de renombre, como J
+                    Balvin, Cardi B y Drake, han dominado las listas de éxitos y
+                    han demostrado su versatilidad como intérprete.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        ))}
+        {prods.map((ro) => (
+          <div style={{ display: "flex", alignItems: "flex-start" }}>
+            <img
+              src={fotobb2}
+              style={{ marginRight: "10px", borderRadius: "15px" }}
+              alt="Bad Bunny"
+            />
+            <div
+              style={{
+                display: "flex",
+                flexDirection: "column",
+                width: "100%",
+                maxWidth: "calc(100% - 310px)",
+              }}
+            >
+              <div
+                style={{
+                  display: "flex",
+                  justifyContent: "space-between",
+                  marginLeft: "10px",
+                  marginRight: "85px",
+                }}
+              >
+                <Link
+                  to="/articuloTW"
+                  style={{ textDecoration: "none", color: "inherit" }}
+                >
+                  <h1
+                    className="h1-custom-style"
+                    style={{
+                      marginRight: "85px",
+                      color: "white",
+                      marginTop: "150px",
+                    }}
+                  >
+                    ¿Cuál es la mejor canción de Bad Bunny?
                   </h1>
                 </Link>
                 <div

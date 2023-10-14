@@ -1,9 +1,24 @@
-import React from "react";
+import React, { useEffect } from "react";
 import fotobb from "../Home/assets/6.jpg";
 import otroBB from "../Home/assets/BB3.jpg"
+import publicidad from "../Home/assets/4.jpg"
 import "../Articulos/Articulo.css";
 
 const Articulo = () => {
+  useEffect(() => {
+    const handleScroll = () => {
+      if (window.scrollY > 300) {
+        alert("Este articulo te podría interesar");
+        window.removeEventListener("scroll", handleScroll);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
   return (
     <div className="page-container">
       <div className="content-container">
@@ -51,7 +66,7 @@ const Articulo = () => {
             convallis hendrerit. Vivamus ac velit in arcu tincidunt euismod.
             Nunc interdum velit vel lacinia bibendum.
           </p>
-
+          <br/>
           <h2>¿Cómo ha influido en la moda y en la musica?</h2>
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum
@@ -90,6 +105,7 @@ const Articulo = () => {
           </p>
         </div>
       </div>
+     
     </div>
   );
 };

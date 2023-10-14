@@ -1,0 +1,42 @@
+.admin-dashboard {
+    padding: 1% 5%;
+    margin-top: 100px;
+    color: white;
+  }
+  
+  .content-item {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 20px;
+  }
+  
+  .content-image {
+    max-width: 200px;
+    margin-right: 10px;
+    border-radius: 15px;
+  }
+  
+  .content-details {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: calc(100% - 220px);
+  }
+  
+  .content-title {
+    margin-right: 85px;
+    color: white;
+    margin-top: 0;
+  }
+  
+  .content-link {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .content-description {
+    margin-right: 85px;
+    color: white;
+    margin-top: 10px;
+  }
+  

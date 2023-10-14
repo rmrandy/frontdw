@@ -4,6 +4,7 @@
   align-items: center;
   min-height: 100vh;
   background: linear-gradient(to bottom, #26465F, #B3C2E8);
+  margin-top: 50px;
 }
 
 .content-container {
@@ -15,8 +16,56 @@
   border-radius: 15px;
   margin-bottom: 85px;
   margin-top: 85px;
+  margin-left: 300px;
+  margin-right: 300px;
 }
 
 .clear-float {
   clear: both;
+}
+
+.tab {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  background-color: #007bff;
+  color: #fff;
+  padding: 10px;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  cursor: pointer;
+  animation: slideIn 0.5s forwards;
+  transform: translateX(100%);
+}
+
+@keyframes slideIn {
+  to {
+    transform: translateX(0);
+  }
+}
+
+
+.anuncio {
+  background-color: #fff;
+  width: 230px;
+  height: auto + 60px;
+  border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: initial;
+  padding: 20px; 
+  text-align: center; 
+}
+
+.h3 {
+  margin: 0; 
+}
+
+
+.publicidad_imagen {
+  width: 90%;
+  border: 2px solid #fff; 
+  border-radius:15px;
+  padding: 5px; 
 }
