@@ -1,0 +1,12 @@
+{
+    "id": "1",
+    "fotobb": "5.jpg",
+    "titulo": "¿Cuál es la mejor canción de Bad Bunny?",
+    "descripcion": "Bad Bunny, nacido el 10 de marzo de 1994 en Vega Baja, Puerto Rico, es un artista...",
+    "contenido": "Agrega aquí el contenido del artículo. Puedes usar párrafos y formato HTML si es necesario.",
+    "autor": "Nombre del autor",
+    "fechaPublicacion": "Fecha de publicación (por ejemplo, 16 de octubre de 2023)",
+    "etiquetas": ["etiqueta1", "etiqueta2", "etiqueta3"],
+    "clicks": 100
+  }
+  
