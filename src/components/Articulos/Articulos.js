@@ -49,7 +49,7 @@ export default function Articulo() {
             }}
           >
             <Link
-              to={"/articulo/${id}"}
+              to={"/articulo/$ + {id}"}
               style={{ textDecoration: "none", color: "inherit" }}
             >
               <h1

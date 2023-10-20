@@ -4,6 +4,7 @@ import foto from "../Home/assets/7.jpg";
 import theWK from "../Home/assets/THEWK.jpg"
 import theWK2 from "../Home/assets/THEWK2.jpg"
 
+
 function Articulo2() {
  
   return (
