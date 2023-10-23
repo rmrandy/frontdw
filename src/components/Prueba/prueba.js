@@ -1,22 +1,12 @@
 import React from "react";
-import { Link } from "react-router-dom"; // Importa Link desde react-router-dom
+import { Link } from "react-router-dom"; 
 import foto from "../Home/assets/4.jpg";
 import foto2 from "../Home/assets/0FD9ABA0-E3E6-461C-B06A-DF38B7D0D995.jpg";
 import foto3 from "../Home/assets/BB3.jpg";
-import { useHistory } from "react-router-dom";
+
 import "./prueba.css";
 
-const Categorias = () => {
-  const history = useHistory();
-
-  const redirectToPremiumTemplate = () => {
-    history.push("/plantilla_premium");
-  };
-
-  const linkStyle = {
-    textDecoration: "none",
-    cursor: "pointer",
-  };
+const Categorias = () => {  
 
   return (
     <div className="categorias-container" style={{ height: "100vh" , marginTop: "80px"}} >

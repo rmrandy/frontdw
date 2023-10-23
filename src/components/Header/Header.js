@@ -121,7 +121,7 @@ export default function Header() {
               <MenuItem onClick={handleCloseProfileMenu}>Gratuito</MenuItem>
             </Menu>
             <Button color="inherit" href="/categorías">
-              Plantillas
+              Categorías
             </Button>
             <Button color="inherit" href="/home">
               Home

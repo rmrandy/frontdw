@@ -1,71 +1,67 @@
-.page-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  min-height: 100vh;
-  background: linear-gradient(to bottom, #26465F, #B3C2E8);
-  margin-top: 50px;
-}
 
-.content-container {
-  background-color: #ffffff;
+.categorias-container {
+  background-color: #f0f0f0;
   padding: 20px;
-  max-width: 8.5in;
-  box-shadow: 0px 0px 0px 1px black, 0px 0px 10px rgba(0, 0, 0, 0.1);
-  margin-inline: rgba(0, 0, 0, 0.1);
-  border-radius: 15px;
-  margin-bottom: 85px;
-  margin-top: 85px;
-  margin-left: 300px;
-  margin-right: 300px;
+  border-radius: 10px;
+  margin: 20px auto;
+  width: 80%;
+  max-width: 600px;
+  margin-top: 130px;
 }
 
-.clear-float {
-  clear: both;
+
+.categorias-heading {
+  font-size: 24px;
+  margin-bottom: 10px;
 }
 
-.tab {
-  position: fixed;
-  top: 50%;
-  right: 0;
+
+.form-container {
+  background-color: #fff;
+  padding: 20px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+input {
+  width: 100%;
+  padding: 10px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.add-button {
   background-color: #007bff;
   color: #fff;
-  padding: 10px;
-  border-top-left-radius: 10px;
-  border-bottom-left-radius: 10px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
   cursor: pointer;
-  animation: slideIn 0.5s forwards;
-  transform: translateX(100%);
-}
-
-@keyframes slideIn {
-  to {
-    transform: translateX(0);
-  }
 }
 
 
-.anuncio {
-  background-color: #fff;
-  width: 230px;
-  height: auto + 60px;
-  border-radius: 15px;
+.categorias-list {
   display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: initial;
-  padding: 20px; 
-  text-align: center; 
+  flex-wrap: wrap;
 }
 
-.h3 {
-  margin: 0; 
+.categoria-item {
+  background-color: #fff;
+  padding: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  margin: 10px;
+  width: calc(50% - 20px); 
+  box-sizing: border-box;
 }
 
 
-.publicidad_imagen {
-  width: 90%;
-  border: 2px solid #fff; 
-  border-radius:15px;
-  padding: 5px; 
+.categoria-image {
+  max-width: 100%;
+  height: auto;
+  margin-top: 10px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
 }
