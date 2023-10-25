@@ -18,7 +18,7 @@ import TextField from '@mui/material/TextField';
 import Box from '@mui/material/Box';
 import axios from 'axios';
 import { useState, useContext } from 'react';
-import { MenuItem, Select } from '@mui/material';
+// import { MenuItem, Select } from '@mui/material';
 
 import { MultiSelect } from "react-multi-select-component";
 import { LoginContext } from '../../context/contexto';
@@ -29,7 +29,7 @@ import { LoginContext } from '../../context/contexto';
 export default function RegistroArticulos() {
 
   const{
-    username, setUsername, setTipoUsuario, tipoUsuario
+    // username, setUsername, setTipoUsuario, tipoUsuario
 } = useContext(LoginContext);
 
 
@@ -41,7 +41,7 @@ export default function RegistroArticulos() {
     const [openN, setOpenN] = React.useState(false);
     const [selected, setSelected] = useState([]);
     const [options, setOptions] = useState([]);
-    const [Articulo, setArticulo] = useState(null);
+    const [ setArticulo] = useState(null);
     const [row, setRows]=useState([]);
 
 

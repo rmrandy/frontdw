@@ -30,7 +30,7 @@ export default function Home() {
       });
   }, []);
 
-  // Función para ordenar los artículos por la cantidad de clics
+  
   const sortByClicks = (items) => {
     return items.slice().sort((a, b) => b.clicks - a.clicks);
   };

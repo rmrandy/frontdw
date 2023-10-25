@@ -1,12 +1,67 @@
-import React from "react";
+import React, { useState } from "react";
 import "./Articulo2.css";
 import foto from "../Home/assets/7.jpg";
-import theWK from "../Home/assets/THEWK.jpg"
-import theWK2 from "../Home/assets/THEWK2.jpg"
+import theWK from "../Home/assets/THEWK.jpg";
+import theWK2 from "../Home/assets/THEWK2.jpg";
 
+function Comment({ text, replies, onReply }) {
+  const [newReply, setNewReply] = useState("");
+  const [isReplying, setIsReplying] = useState(false);
+
+  const handleReply = () => {
+    onReply(newReply);
+    setNewReply("");
+    setIsReplying(false);
+  };
+
+  return (
+    <div className="comment">
+      <p>{text}</p>
+      <button onClick={() => setIsReplying(!isReplying)}>Responder</button>
+      {isReplying && (
+        <div>
+          <textarea
+            value={newReply}
+            onChange={(e) => setNewReply(e.target.value)}
+            placeholder="Escribe tu respuesta..."
+          />
+          <button onClick={handleReply}>Enviar</button>
+        </div>
+      )}
+      {replies && replies.length > 0 && (
+        <div className="replies">
+          {replies.map((reply, index) => (
+            <Comment key={index} text={reply.text} replies={reply.replies} onReply={(replyText) => onReply(replyText, index)} />
+          ))}
+        </div>
+      )}
+    </div>
+  );
+}
 
 function Articulo2() {
- 
+  const [comments, setComments] = useState([]);
+  const [newComment, setNewComment] = useState("");
+
+  const handleCommentChange = (e) => {
+    setNewComment(e.target.value);
+  };
+
+  const handleSubmitComment = () => {
+    if (newComment.trim() !== "") {
+      setComments([...comments, { text: newComment, replies: [] }]);
+      setNewComment("");
+    }
+  };
+
+  const handleReply = (replyText, commentIndex) => {
+    if (replyText.trim() !== "") {
+      const updatedComments = [...comments];
+      updatedComments[commentIndex].replies.push({ text: replyText, replies: [] });
+      setComments(updatedComments);
+    }
+  };
+
   return (
     <div className="article-container">
       <div className="article-content-container">
@@ -65,8 +120,24 @@ function Articulo2() {
             non auctor dolor. Nunc id viverra velit. Phasellus eget dictum urna.
           </p>
         </div>
+        
         <div className="article-author-container">
           <p className="article-author">Escrito por: Nombre del Autor</p>
+        </div>
+        <form>
+          <textarea
+            value={newComment}
+            onChange={handleCommentChange}
+            placeholder="Escribe tu comentario aquí"
+          />
+          <button type="button" onClick={handleSubmitComment}>
+            Comentar
+          </button>
+        </form>
+        <div className="article-comments">
+          {comments.map((comment, index) => (
+            <Comment key={index} text={comment.text} replies={comment.replies} onReply={(replyText) => handleReply(replyText, index)} />
+          ))}
         </div>
       </div>
     </div>
