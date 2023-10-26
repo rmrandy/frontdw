@@ -47,8 +47,8 @@ export default function Header() {
         position="fixed"
         sx={{
           background: scrolling
-            ? "linear-gradient(to bottom, #26465F, #B3C2E8)"
-            : "linear-gradient(to bottom, #26465F, #26465F)",
+            ? "linear-gradient(to bottom, #dde4ec, #c1c8db)"
+            : "linear-gradient(to bottom, #dde4ec, #c1c8db)",
           transition: "background 6s",
         }}
       >
@@ -125,6 +125,12 @@ export default function Header() {
             </Button>
             <Button color="inherit" href="/home">
               Home
+            </Button>
+            <Button color="inherit" href="/categorías">
+              Crear Articulo 
+            </Button>
+            <Button color="inherit" href="/home">
+              Cerrar Sesión 
             </Button>
           </Toolbar>
         )}

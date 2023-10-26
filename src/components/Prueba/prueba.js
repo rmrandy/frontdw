@@ -1,113 +1,77 @@
-import React from "react";
-import { Link } from "react-router-dom"; 
-import foto from "../Home/assets/4.jpg";
-import foto2 from "../Home/assets/0FD9ABA0-E3E6-461C-B06A-DF38B7D0D995.jpg";
-import foto3 from "../Home/assets/BB3.jpg";
-
+import React, { useState } from "react";
 import "./prueba.css";
 
-const Categorias = () => {  
+const Categorias = () => {
+  const [categorias, setCategorias] = useState([]);
+  const [nombreCategoria, setNombreCategoria] = useState("");
+  const [subcategoria, setSubcategoria] = useState("");
+  const [descripcionGeneral, setDescripcionGeneral] = useState("");
+  const [imagen, setImagen] = useState("");
+
+  const handleNuevaCategoria = () => {
+    const nuevaCategoria = {
+      nombreCategoria,
+      subcategoria,
+      descripcionGeneral,
+      imagen,
+    };
+    setCategorias([...categorias, nuevaCategoria]);
+
+    setNombreCategoria("");
+    setSubcategoria("");
+    setDescripcionGeneral("");
+    setImagen("");
+  };
 
   return (
-    <div className="categorias-container" style={{ height: "100vh" , marginTop: "80px"}} >
-      <div className="category">
-        <Link to="/plantilla_noticia">
-          <div className="category-content">
-            <div className="category-image">
-              <img
-                src={foto2}
-                alt="Imagen"
-                style={{
-                  borderRadius: "20px",
-                  width: "350px",
-                  height: "500px",
-                  objectFit: "cover",
-                  display: "block",
-                  margin: "0 auto",
-                  marginTop: "30px",
-                  marginBottom: "60px",
-                }}
-              />
-            </div>
-            <div className="category-text">
-              <h1>Tu título aquí</h1>
-              <p>Aquí tu contenido de un articulo de noticia</p>
-            </div>
-          </div>
-        </Link>
+    <div className="categorias-container">
+      <h2 className="categorias-heading">Crear Nueva Categoría</h2>
+      <div className="form-container">
+        <input
+          type="text"
+          placeholder="Nombre de Categoría"
+          value={nombreCategoria}
+          onChange={(e) => setNombreCategoria(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Subcategoría"
+          value={subcategoria}
+          onChange={(e) => setSubcategoria(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="Descripción General"
+          value={descripcionGeneral}
+          onChange={(e) => setDescripcionGeneral(e.target.value)}
+        />
+        <input
+          type="text"
+          placeholder="URL de la Imagen"
+          value={imagen}
+          onChange={(e) => setImagen(e.target.value)}
+        />
+        <button onClick={handleNuevaCategoria} className="add-button">
+          Agregar Categoría
+        </button>
       </div>
 
-      <div className="category">
-        <Link to="/plantilla_premium">
-        <div className="category-content">
-          <div className="category-image">
+      <h2 className="categorias-heading">Categorías Creadas</h2>
+      <div className="categorias-list">
+        {categorias.map((categoria, index) => (
+          <div key={index} className="categoria-item">
+            <h3>{categoria.nombreCategoria}</h3>
+            <p>Subcategoría: {categoria.subcategoria}</p>
+            <p>Descripción General: {categoria.descripcionGeneral}</p>
             <img
-              src={foto}
-              alt="Imagen"
-              style={{
-                borderRadius: "15px",
-                width: "350px",
-                height: "500px",
-                objectFit: "cover",
-                display: "block",
-                margin: "0 auto",
-                marginTop: "30px",
-                marginBottom: "60px",
-              }}
+              src={categoria.imagen}
+              alt={categoria.nombreCategoria}
+              className="categoria-image"
             />
           </div>
-          <div className="article-container">
-            <div className="category-text">
-              <h1>Tu título aquí</h1>
-              <p>Aquí tu contenido de un artículo de opinión</p>
-            </div>
-          </div>
-          <div className="category-icon">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              className="lucide lucide-crown"
-            >
-              <path d="m2 4 3 12h14l3-12-6 7-4-7-4 7-6-7zm3 16h14" />
-            </svg>
-          </div>
-        </div>
-        </Link>
-      </div>
-
-      <div className="category">
-        <div className="category-content">
-          <div className="category-image">
-            <img
-              src={foto3}
-              alt="Imagen"
-              style={{
-                borderRadius: "15px",
-                width: "350px",
-                height: "500px",
-                objectFit: "cover",
-                display: "block",
-                margin: "0 auto",
-                marginTop: "30px",
-                marginBottom: "60px",
-              }}
-            />
-          </div>
-          <div className="category-text">
-            <h1>Tu título aquí</h1>
-            <p>Aquí tu contenido de un articulo de reseñas</p>
-          </div>
-        </div>
+        ))}
       </div>
     </div>
   );
 };
-
 export default Categorias;
