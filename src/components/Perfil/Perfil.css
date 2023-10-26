@@ -1,0 +1,18 @@
+body, #root {
+    height: 100vh; 
+    margin: 0; 
+    display: flex; 
+    justify-content: center; 
+    align-items: center; 
+  }
+  
+  .profile-container {
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background: #f7f7f7;
+    border-radius: 5px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 500px;
+  }
+  

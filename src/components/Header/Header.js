@@ -43,12 +43,12 @@ export default function Header() {
 
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <AppBar
+      <AppBar 
         position="fixed"
         sx={{
           background: scrolling
-            ? "linear-gradient(to bottom, #dde4ec, #c1c8db)"
-            : "linear-gradient(to bottom, #dde4ec, #c1c8db)",
+            ? "linear-gradient(to bottom, #dde4ec, #7c8dbc)"
+            : "linear-gradient(to bottom, #dde4ec, #7c8dbc)",
           transition: "background 6s",
         }}
       >
@@ -101,25 +101,9 @@ export default function Header() {
                 />
               </Link>
             </Typography>
-            <Button color="inherit" onClick={handleProfileClick}>
+            <Button color="inherit" href="/perfil">
               Perfil
             </Button>
-            <Menu
-              anchorEl={profileMenuAnchorEl}
-              open={Boolean(profileMenuAnchorEl)}
-              onClose={handleCloseProfileMenu}
-              anchorOrigin={{
-                vertical: "bottom",
-                horizontal: "left",
-              }}
-              transformOrigin={{
-                vertical: "top",
-                horizontal: "left",
-              }}
-            >
-              <MenuItem onClick={handleCloseProfileMenu}>Premium</MenuItem>
-              <MenuItem onClick={handleCloseProfileMenu}>Gratuito</MenuItem>
-            </Menu>
             <Button color="inherit" href="/categorías">
               Categorías
             </Button>

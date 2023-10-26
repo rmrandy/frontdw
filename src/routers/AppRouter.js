@@ -17,7 +17,7 @@ import Plantillas from "../components/plantillas/plantillas"
 import Articulo2 from "../components/Articulo2/Articulo2";
 import PerfilAdmin from "../components/Perfiles/Admin"
 import Plantilla2 from "../components/plantillas/plantillapremium";
-
+import Perfil from "../components/Perfil/Perfil"
 
 
 function AppRouter() {
@@ -41,6 +41,7 @@ function AppRouter() {
           <Route path="/articuloTW" component={Articulo2} /> 
           <Route path="/admin" component={PerfilAdmin} /> 
           <Route path="/plantilla_premium" component={Plantilla2} /> 
+          <Route path="/perfil" component={Perfil} /> 
         </Switch>
 
       ) : tipoUsuario === 2 ? (
@@ -55,6 +56,7 @@ function AppRouter() {
           <Route path="/articuloTW" component={Articulo2} /> 
           <Route path="/admin" component={PerfilAdmin} /> 
           <Route path="/plantilla_premium" component={Plantilla2} /> 
+          <Route path="/perfil" component={Perfil} /> 
         </Switch>
       ) : tipoUsuario === 3 ? (
         <Switch>
@@ -69,6 +71,7 @@ function AppRouter() {
           <Route path="/articuloTW" component={Articulo2} /> 
           <Route path="/admin" component={PerfilAdmin} /> 
           <Route path="/plantilla_premium" component={Plantilla2} /> 
+          <Route path="/perfil" component={Perfil} /> 
         </Switch>
       ) : (
         <Switch>
@@ -84,6 +87,7 @@ function AppRouter() {
           <Route path="/articuloTW" component={Articulo2} /> 
           <Route path="/admin" component={PerfilAdmin} /> 
           <Route path="/plantilla_premium" component={Plantilla2} /> 
+          <Route path="/perfil" component={Perfil} /> 
         </Switch>
       )}
     </Router>
