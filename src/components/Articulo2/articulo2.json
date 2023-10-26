@@ -1,0 +1,43 @@
+{
+  "title": "Título del Artículo",
+  "author": "Nombre del Autor",
+  "src": "/THEWK2",
+  "content": [
+    {
+      "type": "text",
+      "text": "Lorem ipsum dolor sit amet, consectetur adipiscing elit..."
+    },
+    {
+      "type": "image",
+      "src": "/THEWK2.jpg",
+      "alt": "The Weeknd",
+      "style": {
+        "maxHeight": "600px"
+      }
+    },
+    {
+      "type": "text",
+      "text": "Nullam id eleifend metus. Etiam vel arcu odio..."
+    },
+    {
+      "type": "text",
+      "text": "Sed vel erat aliquet, fringilla justo eu, malesuada ligula..."
+    },
+    {
+      "type": "image",
+      "src": "/THEWK.jpg",
+      "alt": "The Weeknd",
+      "style": {
+        "maxHeight": "600px"
+      }
+    },
+    {
+      "type": "text",
+      "text": "Nam suscipit, massa et aliquam tincidunt, leo turpis tincidunt..."
+    },
+    {
+      "type": "text",
+      "text": "Praesent id dolor id justo iaculis varius eget vitae libero..."
+    }
+  ]
+}
