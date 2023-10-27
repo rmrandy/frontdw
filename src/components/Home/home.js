@@ -58,7 +58,8 @@ export default function Home() {
     <div
       style={{
         padding: "1% 5%",
-        marginTop: "100px",
+        marginTop: "1100px",
+        
       }}
     >
       <h1 style={{ color: "black", marginBottom: "30px" }}>
@@ -204,7 +205,7 @@ export default function Home() {
           <div style={{ display: "flex", flexDirection: "column" }}>
             <label htmlFor="nombre">Nombre:</label>
             <input
-              type="text"
+              type="text" 
               id="nombre"
               value={nombre}
               onChange={(e) => setNombre(e.target.value)}

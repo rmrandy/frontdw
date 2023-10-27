@@ -6,22 +6,18 @@ import Typography from "@mui/material/Typography";
 import Button from "@mui/material/Button";
 import { LoginContext } from "../../context/contexto";
 import { useContext, useState, useEffect } from "react";
-import Menu from "@mui/material/Menu";
+
 import { Link } from 'react-router-dom';
-import MenuItem from "@mui/material/MenuItem";
+
 import foto from "../Home/assets/EE3349FA-E81E-49A2-BA8B-3585D2243FA2_4_5005_c.jpeg";
 
 export default function Header() {
-  const [profileMenuAnchorEl, setProfileMenuAnchorEl] = useState(null);
+  
   const [scrolling, setScrolling] = useState(false);
 
-  const handleProfileClick = (event) => {
-    setProfileMenuAnchorEl(event.currentTarget);
-  };
+  
 
-  const handleCloseProfileMenu = () => {
-    setProfileMenuAnchorEl(null);
-  };
+
 
   const { setUsername, setTipoUsuario, tipoUsuario } = useContext(LoginContext);
 

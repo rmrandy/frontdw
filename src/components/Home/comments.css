@@ -1,3 +1,14 @@
+.container {
+  max-width: 1200px; 
+  margin: 0 auto; 
+}
+
+@media (max-width: 768px) {
+  .container {
+    width: 100%; /* Cambia el ancho del contenedor para pantallas más pequeñas */
+  }
+}
+
 
 .contact-form {
     margin-top: 50px;
