@@ -5,7 +5,7 @@
 
 @media (max-width: 768px) {
   .container {
-    width: 100%; /* Cambia el ancho del contenedor para pantallas más pequeñas */
+    width: 100%; 
   }
 }
 

@@ -24,7 +24,7 @@ function Profile() {
   return (
     <div className="profile-container">
       <h2>Perfil de Usuario</h2>
-      <div>
+      <div style={{marginRight: "15px"}}>
         <label>Nombre:</label>
         <input
           type="text"
@@ -32,7 +32,7 @@ function Profile() {
           onChange={(e) => setName(e.target.value)}
         />
       </div>
-      <div>
+      <div style={{marginRight: "15px"}}>
         <label>Contraseña:</label>
         <input
           type="password"
@@ -40,7 +40,7 @@ function Profile() {
           onChange={handlePasswordChange}
         />
       </div>
-      <div>
+      <div style={{marginRight: "15px"}}>
         <label>Confirmar Contraseña:</label>
         <input
           type="password"

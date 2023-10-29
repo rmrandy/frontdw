@@ -38,7 +38,7 @@ export default function Header() {
   }, [scrolling]);
 
   return (
-    <Box sx={{ flexGrow: 1 }}>
+    <Box sx={{ flexGrow: 1 }} >
       <AppBar 
         position="fixed"
         sx={{
@@ -106,8 +106,8 @@ export default function Header() {
             <Button color="inherit" href="/home">
               Home
             </Button>
-            <Button color="inherit" href="/categorías">
-              Crear Articulo 
+            <Button color="inherit" href="/plantilla_premium">
+              Crear Categoría 
             </Button>
             <Button color="inherit" href="/home">
               Cerrar Sesión 

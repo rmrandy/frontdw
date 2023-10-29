@@ -2,7 +2,7 @@ import React, { useState, useEffect } from "react";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from "react-responsive-carousel";
 import { Link } from "react-router-dom";
-import "./comments.css"
+// import "./comments.css"
 
 export default function Home() {
   const [data, setData] = useState([]);
@@ -56,19 +56,20 @@ export default function Home() {
 
   return (
     <div
+    className="home"
       style={{
         padding: "1% 5%",
         marginTop: "1100px",
-        
+        marginLeft: "0px"
       }}
     >
-      <h1 style={{ color: "black", marginBottom: "30px" }}>
+      <h1 style={{ color: "black", marginBottom: "30px" , alignItems: "left"}}>
         Mejores Articulos
       </h1>
-      <Carousel>
+      <Carousel> 
         {sortByClicks(data).map((item) => (
           <div key={item.titulo}>
-            <div style={{ display: "flex", alignItems: "flex-start" }}>
+            <div style={{ display: "flex", alignItems: "flex-start", marginTop:"10px" }}>
               <img
                 src={item.fotobb}
                 style={{ marginRight: "10px", borderRadius: "15px" }}

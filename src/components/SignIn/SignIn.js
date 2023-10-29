@@ -52,7 +52,7 @@ export default function SignIn() {
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "15px",
-          marginTop: "40px",
+          marginTop: "100px",
           marginBottom: "30px",
         }}
       >
