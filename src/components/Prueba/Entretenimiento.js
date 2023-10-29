@@ -27,15 +27,27 @@ const Entretenimiento = () => {
         </div>
         <div className="sub1">
           <img src={cine} alt="Cine" className="imagen" />
-          <p>Cine </p>
+          <p>Cine</p>
+          <p className="texto-adicional">
+            Este es un artículo de entretenimiento acerca del cine. Encontrarás
+            información interesante sobre películas, actores y más.
+          </p>
         </div>
         <div className="sub2">
-          <img src={album} alt="Cine" className="imagen" />
-          <p>Musica </p>
+          <img src={album} alt="Música" className="imagen" />
+          <p>Música</p>
+          <p className="texto-adicional">
+            Descubre las últimas noticias y tendencias musicales. Explora
+            reseñas de álbumes, artistas destacados y conciertos emocionantes.
+          </p>
         </div>
         <div className="sub3">
-          <img src={arte} alt="Cine" className="imagen" />
-          <p>Arte </p>
+          <img src={arte} alt="Arte" className="imagen" />
+          <p>Arte</p>
+          <p className="texto-adicional">
+            Sumérgete en el mundo del arte. Explora obras maestras, artistas
+            contemporáneos y las últimas exposiciones artísticas.
+          </p>
         </div>
       </div>
     </>
