@@ -11,13 +11,10 @@ import { Link } from 'react-router-dom';
 
 import foto from "../Home/assets/EE3349FA-E81E-49A2-BA8B-3585D2243FA2_4_5005_c.jpeg";
 
+
 export default function Header() {
   
   const [scrolling, setScrolling] = useState(false);
-
-  
-
-
 
   const { setUsername, setTipoUsuario, tipoUsuario } = useContext(LoginContext);
 
@@ -104,12 +101,12 @@ export default function Header() {
               Categorías
             </Button>
             <Button color="inherit" href="/home">
-              Home
+              Inicio
             </Button>
             <Button color="inherit" href="/plantilla_premium">
               Crear Categoría 
             </Button>
-            <Button color="inherit" href="/home">
+            <Button color="inherit" href="/signIn">
               Cerrar Sesión 
             </Button>
           </Toolbar>

@@ -3,9 +3,21 @@ import "./prueba.css";
 import album from "../Prueba/Images/Killers_album-scaled.jpg";
 import cine from "../Prueba/Images/image.jpg";
 import arte from "../Prueba/Images/la-mona-lisa-cke.jpg";
+import { useHistory } from "react-router-dom";
 
 const Entretenimiento = () => {
   const nombreCategoriaUsuario = localStorage.getItem("nombreCategoriaUsuario");
+  const history = useHistory();
+
+  const handleCineClick = () => {
+    history.push("/plantilla_noticia");
+  };
+
+  const handleCineClickMusica = () => {
+    history.push("/musica");
+  };
+
+  
 
   return (
     <>
@@ -22,10 +34,10 @@ const Entretenimiento = () => {
         </div>
       </div>
       <div className="contenido-ent">
-        <div>
-          <h4> Sub Categorías</h4>{" "}
+        <div className="sub-cat">
+          <h4> Sub Categorías</h4>
         </div>
-        <div className="sub1">
+        <div className="sub1" onClick={handleCineClick}>
           <img src={cine} alt="Cine" className="imagen" />
           <p>Cine</p>
           <p className="texto-adicional">
@@ -33,7 +45,7 @@ const Entretenimiento = () => {
             información interesante sobre películas, actores y más.
           </p>
         </div>
-        <div className="sub2">
+        <div className="sub2" onClick={handleCineClickMusica}>
           <img src={album} alt="Música" className="imagen" />
           <p>Música</p>
           <p className="texto-adicional">

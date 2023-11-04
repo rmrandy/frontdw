@@ -1,9 +1,9 @@
 import React, { useState, useEffect } from "react";
-import articleData from "./articulo2.json";
-import "./Articulo2.css";
-import publi from "./THEWK.jpg"
+import jsonArticulo from "./musica.json";
+import "./musica.css";
+import publi from "./Images/Killers_album-scaled.jpg";
 
-function Articulo2() {
+function Musica() {
   const [newComment, setNewComment] = useState("");
   const [comments, setComments] = useState([]);
 
@@ -89,6 +89,7 @@ function Articulo2() {
     };
 
     return (
+   
       <div className="comment">
         <p>{comment.text}</p>
         <div className="likes-dislikes">
@@ -126,53 +127,62 @@ function Articulo2() {
     );
   };
 
-  function Ad() {
+  const Ad = () => {
     const rutaAleatoria = () => {
       const routes = ["/musica", "/plantilla_noticia", "/articuloTW"];
       const randomIndex = Math.floor(Math.random() * routes.length);
       return routes[randomIndex];
     };
-  
+
     const handleAdClick = () => {
       const randomRoute = rutaAleatoria();
       window.location.href = randomRoute;
     };
+
+    const adContainerStyle = {
+      position: "fixed",
+      top: 110,
+      right: 95,
+      display: "flex",
+      flexDirection: "column",
+      alignItems: "center", 
+      justifyContent: "center", 
+      padding: "10px",
+      backgroundColor: "white",
+      borderRadius: "15px",
+      width: "250px",
+      
+    };
   
+
     return (
-      <div className="ad" onClick={handleAdClick}>
-        <p style={{fontSize: "20px"}}>¡También te podría interesar esto!</p>
-        <img
-          src={publi}
-          alt="Anuncio"
-          style={{
-            position: "fixed",
-            top: 100,
-            right: 95,
-            padding: "10px",
-            backgroundColor: "white",
-            borderRadius: "15px",
-            width: "250px",
-          }}
-        />
-      </div>
+      <div style={adContainerStyle} onClick={handleAdClick}>
+      <p>¡También te podría interesar esto!</p>
+      <img
+        src={publi}
+        alt="Anuncio"
+        style={{ width: "200px", height: "auto", borderRadius: "15px" }}
+      />
+    </div>
     );
-  }
+  };
 
   return (
+    <div>
     <div className="article-container">
       <div className="article-content-container">
         <div className="article-title-container">
-          <h1 className="article-title">{articleData.title}</h1>
+          <h1 className="article-title">{jsonArticulo.title}</h1>
         </div>
         <div className="article-image-container">
           <img
-            src={articleData.image}
+            src={jsonArticulo.image}
             alt="The Weeknd"
             className="article-image"
           />
         </div>
         <div className="article-content">
-          {articleData.content.map((item, index) => {
+          {jsonArticulo.content.map((item, index) => {
             if (item.type === "text") {
               return <p key={index}>{item.text}</p>;
             } else if (item.type === "image") {
@@ -191,7 +201,7 @@ function Articulo2() {
           })}
         </div>
         <div className="article-author-container">
-          <p className="article-author">Escrito por: {articleData.author}</p>
+          <p className="article-author">Escrito por: {jsonArticulo.author}</p>
         </div>
         <form>
           <textarea
@@ -219,7 +229,8 @@ function Articulo2() {
         <Ad />
       </div>
     </div>
+    </div>
   );
 }
 
-export default Articulo2;
+export default Musica;

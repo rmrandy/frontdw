@@ -131,10 +131,10 @@ input {
 
 
 .contenido-ent {
-  background-color: #E3F4F4;
-  width: 100vh;
+  background-color: #dbecec;
+  width: 110vh;
   height: 755px;
-  margin-left: 550px;
+  margin-left: 650px;
   margin-top: 85px;
   border-radius: 10px;
   position:initial;
@@ -156,6 +156,11 @@ input {
   height: 25%;
   margin-bottom: 30px;
   color: #000000;
+  text-align: center;
+}
+
+.sub1:hover, .sub2:hover, .sub3:hover {
+  transform: scale(1.05);
 }
 
 
@@ -198,4 +203,8 @@ input {
 
 .texto-adicional  p {
   font-size: 10px;
+}
+
+.sub-cat {
+  text-align: center;
 }

@@ -1,0 +1,26 @@
+{
+  "title": "La Revista Cinematográfica",
+  "issues": [
+    {
+      "title": "Christopher Nolan",
+      "cover": "https://pyxis.nymag.com/v1/imgs/b97/838/9575952d6e4aaa9424ba7ce1b38485b97d-nolan-movies-ranked.jpg",
+      "images": [
+        "https://pyxis.nymag.com/v1/imgs/b97/838/9575952d6e4aaa9424ba7ce1b38485b97d-nolan-movies-ranked.jpg",
+        "https://assets-prd.ignimgs.com/2022/06/25/christopher-nolanthumbnail-1656119510504.jpg",
+        "https://cdn-3.expansion.mx/dims4/default/e249872/2147483647/strip/true/crop/1192x747+0+0/resize/1800x1128!/format/webp/quality/80/?url=https%3A%2F%2Fcdn-3.expansion.mx%2F9d%2F50%2F41b89a1748ecb88ea00107f0ede4%2Fbatman-bale.JPG"
+      ],
+      "articles": [
+        {
+          "title": "Christopher Nolan",
+          "author": "Randy Rivera",
+          "content": "Descubre el mundo del cine de Christopher Nolan y su influencia en la industria cinematográfica. Exploraremos cómo este director ha dejado su huella en la historia del cine y ha desafiado las convenciones de Hollywood. Christopher Nolan es conocido por su enfoque innovador en la narrativa y la dirección, lo que lo ha convertido en uno de los cineastas más influyentes de la actualidad. Desde su trabajo en películas como 'Inception' hasta la trilogía de 'The Dark Knight', Nolan ha demostrado ser un maestro en la creación de experiencias cinematográficas únicas."
+        },
+        {
+          "title": "Grandes Directores",
+          "author": "Rodrigo Mayen",
+          "content": "Explora la vida y obra del director de cine Christopher Nolan, conocido por sus películas innovadoras y su enfoque único en la narrativa. Descubre cómo las películas de Christopher Nolan han influenciado el arte del cine a lo largo de los años. Desde su debut con 'Following' hasta éxitos como 'Inception', 'The Dark Knight Trilogy' y 'Interstellar', Nolan ha demostrado ser un maestro en la creación de experiencias cinematográficas inolvidables. Sus películas a menudo exploran temas de la mente, la realidad y la moralidad, lo que las convierte en piezas destacadas del cine contemporáneo."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,75 @@
+
+body {
+    background-color: #fff; 
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    margin-top: 130px;
+  }
+  
+  .revista {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  
+  .magazine-title {
+    font-size: 32px;
+    text-align: center;
+    margin: 20px 0;
+  }
+  
+  
+  .issue {
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    margin: 20px 0;
+    padding: 20px;
+    background-color: #fff;
+    margin-top: 40px;
+  }
+  
+  .cover {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  
+  .article {
+    margin: 20px 0;
+    padding: 20px;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+  }
+  
+  .article h3 {
+    font-size: 24px;
+  }
+  
+  .author {
+    font-style: italic;
+  }
+  
+  .article-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 20px auto;
+  }
+  
+  .article-content {
+    text-align: justify;
+  }
+  
+  .crear-articulo-botón {
+width: 100%;
+  }
+
+.botón {
+  width: 100%;
+  font-size: large;
+  margin-top: 25px;
+}

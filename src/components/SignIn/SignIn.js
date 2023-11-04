@@ -12,26 +12,26 @@ import Container from "@mui/material/Container";
 import { createTheme, ThemeProvider } from "@mui/material/styles";
 import logo from "../Home/assets/Black and White Minimalist Modern Clean Technology Logo .jpg";
 
-
 const theme = createTheme();
 
 export default function SignIn() {
   const history = useHistory();
+  const correoGuardado = localStorage.getItem("correoElectronico");
+  const contraseñaGuardada = localStorage.getItem("Contraseña");
 
   const handleSubmit = (event) => {
     event.preventDefault();
 
-    const username = "Randy";
-    const password = "123";
-
     const data = new FormData(event.currentTarget);
-    const email = data.get("email");
-    const userPassword = data.get("password");
+    const correoElectronico = data.get("correoElectronico");
+    const usercontraseña = data.get("contraseña");
 
-    if (email === username && userPassword === password) {
-      if (username === "Randy") {
-        history.push("/home");
-      } else {
+    if (
+      correoElectronico === correoGuardado &&
+      usercontraseña === contraseñaGuardada
+    ) {
+      if (correoGuardado === "Randy") {
+        history.push("/home", { from: "SignIn" });
       }
     } else {
       alert(
@@ -52,7 +52,7 @@ export default function SignIn() {
           alignItems: "center",
           justifyContent: "center",
           borderRadius: "15px",
-          marginTop: "100px",
+          marginTop: "130px",
           marginBottom: "30px",
         }}
       >
@@ -72,7 +72,9 @@ export default function SignIn() {
             alt="Logo"
             style={{ maxWidth: "100%", height: "auto" }}
           />
-          <Typography variant="h6" color={"black"}>Bienvenido de nuevo</Typography>
+          <Typography variant="h6" color={"black"}>
+            Bienvenido de nuevo
+          </Typography>
           <Typography component="h1" variant="h5">
             Sign in
           </Typography>
@@ -82,41 +84,44 @@ export default function SignIn() {
             noValidate
             sx={{ mt: 1 }}
           >
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              id="email"
-              label="Email Address"
-              name="email"
-              autoComplete="email"
-              autoFocus
-            />
-            <TextField
-              margin="normal"
-              required
-              fullWidth
-              name="password"
-              label="Password"
-              type="password"
-              id="password"
-              autoComplete="current-password"
-            />
-            <Button
-              type="submit"
-              fullWidth
-              variant="contained"
-              sx={{ mt: 3, mb: 2 }}
-            >
-              Sign In
-            </Button>
+            <form onSubmit={handleSubmit}>
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="correoElectronico"
+                label="Correo Electrónico"
+                type="email"
+                id="correoElectronico"
+                autoComplete="email"
+              />
+              <TextField
+                margin="normal"
+                required
+                fullWidth
+                name="contraseña"
+                label="Contraseña"
+                type="password"
+                id="contraseña"
+                autoComplete="current-contraseña"
+              />
+              <Button
+                type="submit"
+                fullWidth
+                variant="contained"
+                sx={{ mt: 3, mb: 2 }}
+              >
+                Sign In
+              </Button>
+            </form>
+
             <Grid container>
               <Grid item xs>
-                <Link href="#">Forgot password?</Link>
+                <Link href="#">¿Olvidaste tu contraseña?</Link>
               </Grid>
               <Grid item>
                 <Link href="/signUp" variant="body2">
-                  {"Don't have an account? Sign Up"}
+                  {"¿Aún no tienes una cuenta? Crea una aquí"}
                 </Link>
               </Grid>
             </Grid>

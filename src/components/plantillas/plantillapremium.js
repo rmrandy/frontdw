@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./plantilla.css";
 
 export default function Plantilla2() {
+  
   const [categorias, setCategorias] = useState([]);
   const [nombreCategoria, setNombreCategoria] = useState("");
   const [subcategoria, setSubcategoria] = useState("");
